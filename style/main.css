@@ -1,0 +1,84 @@
+html, body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    color: #555;
+    overflow: hidden;
+}
+
+.container {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.content-container {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer {
+    height: 3%;
+}
+
+.content-item {
+    width: 75%;
+    height: 90%;
+}
+
+.content-info {
+    height: 95%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.ui.secondary.vertical.pointing.menu {
+    height: 100%;
+    border-right: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.ui.card {
+    border-radius: 0;
+    border-right: none;
+}
+
+.ui.card .image, .ui.card .image img{
+    border-radius: 0;
+    border: none;
+}
+
+.email {
+    font-size: 9pt;
+}
+
+.spacing {
+    height: 8px;
+}
+
+#about {
+    font-family: 'Lato', sans-serif;
+    height: auto;
+}
+
+.emphasis {
+    color: #000;
+    letter-spacing: 3px;
+}
+
+.content-info p {
+    font-size: 14pt;
+}
