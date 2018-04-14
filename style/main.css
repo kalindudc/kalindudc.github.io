@@ -138,6 +138,8 @@ html, body {
 
     .custom-sidebar {
         height: 100% !important;
+        overflow: hidden !important;
+        overflow-y: auto !important;
     }
 
     .container {
@@ -171,6 +173,9 @@ html, body {
 
     .toggle-sidebar {
         padding: 5px !important;
+        width: 50px !important;
+        height: 50px !important;
+        background-size: 40px 40px !important;
     }
 
     .content-info {
