@@ -7,7 +7,8 @@ html, body {
     align-items: center;
     font-family: 'Lato', sans-serif;
     color: #555;
-    overflow: hidden;
+    overflow: auto;
+    overflow-x: auto;
 }
 
 .container {
@@ -73,6 +74,7 @@ html, body {
 #about {
     font-family: 'Lato', sans-serif;
     height: auto;
+    display: none;
 }
 
 .emphasis {
@@ -80,7 +82,7 @@ html, body {
     letter-spacing: 3px;
 }
 
-.content-info p {
+.info{
     font-size: 14pt;
     letter-spacing: 1px;
 }
@@ -98,22 +100,32 @@ html, body {
     border-bottom: 1px dotted #aaa;
 }
 
-@media (max-width: 800px) {
-    .custom-sidebar {
-        display: none !important;
-    }
+.shown {
+    display: block !important;
+}
 
-    .container {
-        width: 100%;
-    }
+#projects {
+    display: none;
+    width: 90%;
+    overflow: hidden;
+    overflow-y: auto;
+}
 
-    .content-item {
-        width: 95%;
-        overflow-x: hidden;
-        overflow-y: scroll;
-    }
+#projects .content-info {
+    width: 100%;
+    height: auto;
+    align-items:  flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
 
-    .content-info {
-        height: 100%;
-    }
+#projects img {
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    margin-top: 5px !important;
 }
