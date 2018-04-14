@@ -4,12 +4,15 @@
         <meta charset="utf-8">
         <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
+        <link rel="shortcut icon" type="image/x-icon" href="media/avatar.png" />
+        <title>Kalindu De Costa</title>
+
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="lib/semanticUI/semantic.min.css">
         <link rel="stylesheet" type="text/css" href="style/main.css">
     </head>
     <body>
-        <div class="container">
+        <div class="container pusher">
             <div class="ui secondary vertical pointing menu custom-sidebar">
                 <div class="ui card">
                     <div class="image">
@@ -36,7 +39,11 @@
                 <a class="item projects-item">
                     Projects
                 </a>
-                <div class="item courses-item">
+                <a class="item resume-item disabled">
+                    <i class="lock icon"></i>
+                    Resume
+                </a>
+                <div class="item courses-item disabled">
                     Course material
                     <i class="lock icon"></i>
                     <div class="spacing"></div>
@@ -47,6 +54,9 @@
                 </div>
             </div>
             <div class="content-container">
+                <button class="ui basic icon button toggle-sidebar mobile">
+                    <i class="bars icon"></i>
+                </button>
                 <div class="content-info">
                     <div id="about" class="ui piled segment content-item shown">
                         <h1 class="header emphasis">HELLO!</h1>
@@ -63,12 +73,45 @@
                         <p class="info">
                             I am a regular user of git for version control along with <a target="_blank" href="https://github.com/kalindudc">github</a> and you can find most of my <a class="ui projects-item" href="javascript: void(0)">projects</a> uploaded there.
                         </p>
+                        <div class="spacing"></div>
+                        <p class="info">
+                            Also check out my <a class="ui resume-item" href="javascript: void(0)">resume</a> for a full list of qualifications.
+                        </p>
                     </div>
                     <div id="projects" class="ui segment content-item">
                         <h1 class="header emphasis">PROJECTS</h1>
                         <div class="ui divider"></div>
                         <div class="content-info">
                             <div class="ui items">
+                                <div class="item">
+                                    <div class="image">
+                                        <img src="media/projects/aog.png">
+                                    </div>
+                                    <div class="content">
+                                        <a target="_blank" class="header" href="http://art-of-guessing.herokuapp.com/">The Art of Guessing</a>
+                                        <div class="meta">
+                                            <span>Realtime Web based multiplayer game</span>
+                                        </div>
+                                        <div class="description">
+                                            <p>The Art of Guessing is a multiplayer browser game that consists of one person drawing and everyone else guessing the word
+                                            that describes the drawing. The person who guessed the correct word first wins the round. This multiplayer game would also
+                                            feature player statistics and the ability to use voice to control everything. Players will have the choice of joining a public
+                                            queue or creating their own private lobby. Private lobbies will consist of a name and a password, so only users with knowledge
+                                            of both can join.</p>
+                                        </div>
+                                        <div class="extra">
+                                            <a target="_blank" class="ui image label" href="https://github.com/andu0987">Andrei</a>
+                                            <a target="_blank" class="ui image label" href="https://github.com/kalindudc">Kalindu</a>
+                                            <a target="_blank" href="https://www.youtube.com/watch?v=cznICEKMN7g">
+                                                <i class="video icon"></i> Demo
+                                            </a>
+                                            <a target="_blank" href="https://github.com/kalindudc/DoodleCaboodle">
+                                                <i class="github icon"></i> Source Code
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="spacing"></div>
                                 <div class="item">
                                     <div class="image">
                                         <img src="media/projects/eventalicious.png">
@@ -88,32 +131,64 @@
                                             <a target="_blank" class="ui image label" href="https://github.com/kalindudc">Kalindu</a>
                                             <a target="_blank" class="ui image label" href="https://github.com/MLCoco">Michael</a>
                                             <a target="_blank" class="ui image label" href="https://github.com/YufeiCui">Yufei</a>
+                                            <a target="_blank" href="https://github.com/CSCC10SKG/CSCC10SKG.github.io/blob/master/P4.SKG.pdf">
+                                                <i class="book icon"></i> Research Paper
+                                            </a>
                                             <a target="_blank" href="https://github.com/CSCC10SKG/CSCC10SKG.github.io">
                                                 <i class="github icon"></i> Source Code
                                             </a>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="spacing"></div>
                                 <div class="item">
                                     <div class="image">
-                                        <img src="/images/wireframe/image.png">
+                                        <img src="media/projects/apc.png">
                                     </div>
                                     <div class="content">
-                                        <a class="header">Header</a>
+                                        <a target="_blank" class="header" href="https://github.com/kalindudc/AdvancedPlayerController">Advanced Player Controller</a>
                                         <div class="meta">
-                                            <span>Description</span>
+                                            <span>Unity Project (WIP)</span>
                                         </div>
                                         <div class="description">
-                                            <p></p>
+                                            <p>A fully customizable first person/third person controller for Unity. This includes a customizable 3D player model as well
+                                            as fully integrated animations.</p>
+                                        </div>
+                                        <div class="extra">
+                                            <a target="_blank" class="ui image label" href="https://github.com/kalindudc">Kalindu</a>
+                                            <a target="_blank" class="ui image label" href="https://github.com/sakshaat">Sakshaat</a>
+                                            <a target="_blank" href="https://github.com/kalindudc/AdvancedPlayerController">
+                                                <i class="github icon"></i> Source Code
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="spacing"></div>
+                                <div class="item">
+                                    <div class="image">
+                                        <img src="media/projects/ndcacct.png">
+                                    </div>
+                                    <div class="content">
+                                        <a target="_blank" class="header" href="http://ndcacctsolutions.com/">NDC Accounting Solurions</a>
+                                        <div class="meta">
+                                            <span>Website</span>
+                                        </div>
+                                        <div class="description">
+                                            <p>Full implementation of a buisiness website for local proffesional accountant. NDC Accounting Solutions provide Bookkeeping, Accounting, Payroll &amp; Tax Services to small businesses in Toronto, Greater
+                                            Toronto and surrounding areas. We ensure reliable, accurate &amp; professional services to our clients on a timely fashion.</p>
+                                        </div>
+                                        <div class="extra">
+                                            <a target="_blank" class="ui image label" href="https://github.com/kalindudc">Kalindu</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="spacing"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="footer">
-                    all work &#169; Kalindu De Costa 2018 &#183; all rights reserved
+                    all work &#169; Kalindu De Costa 2018 &#183; all rights reserved &#183; <a class="credits" href="credits.html">credits</a>
                 </div>
             </div>
         </div>
