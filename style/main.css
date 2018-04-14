@@ -30,6 +30,7 @@ html, body {
 
 .footer {
     height: 3%;
+    min-height: 20px;
 }
 
 .content-item {
@@ -81,4 +82,38 @@ html, body {
 
 .content-info p {
     font-size: 14pt;
+    letter-spacing: 1px;
+}
+
+.custom-active {
+    font-weight: bold !important;
+    color: #000 !important;
+}
+
+.courses-item .item:active {
+    border: none !important;
+}
+
+.highlight {
+    border-bottom: 1px dotted #aaa;
+}
+
+@media (max-width: 800px) {
+    .custom-sidebar {
+        display: none !important;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .content-item {
+        width: 95%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+
+    .content-info {
+        height: 100%;
+    }
 }
