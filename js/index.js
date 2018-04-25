@@ -1,115 +1,102 @@
 (function(){
     "user strict";
 
-    var lockCourses = true;
-    var lockA08 = true;
-    var lockA48 = true;
-    var lockResume = true;
+    var menuOpen = false;
 
-    parseURL();
-
-    setLayoutPref();
-
-    window.onresize = function() {setLayoutPref()};
-
-    $(".about-item").click(function() {
-        enableItem(".about-item");
-        enableSection("#about");
-    });
-
-    $(".projects-item").click(function() {
-        enableItem(".projects-item");
-        enableSection("#projects");
-    });
-
-    $(".resume-item").click(function() {
-        if (!lockResume) {
-            enableItem(".resume-item");
-            enableSection("#resume");
-        }
-    });
-
-    $(".csca08").click(function() {
-        if (!lockCourses && !lockA08) {
-            enableItem(".courses-item");
-            $(".csca08").addClass("custom-active");
-        }
-    });
-
-    $(".csca48").click(function() {
-        if (!lockCourses && !lockA48) {
-            enableItem(".courses-item");
-            $(".csca48").addClass("custom-active");
+    $(".content-container").click(function() {
+        if (menuOpen) {
+            toggleMenu();
         }
     });
 
     $(".popup").popup({ boundary: ".segment" });
 
-    $(".toggle-sidebar").click(function(){$(".custom-sidebar").sidebar("toggle");});
+    $("#expand-item").click(function() {
+        toggleMenu();
+    });
 
-    function enableItem(item) {
-        $(".item").removeClass("active");
-        $(".item").removeClass("custom-active");
-        $(item).addClass("active");
+    $("#about-item").click(function() {
+        hideAllSections();
+        $("#about").css("height", "100%");
+        $("#about-item").addClass("active");
+        showID("#about");
+    });
+
+    $("#projects-item").click(function() {
+        hideAllSections();
+        $("#projects").css("height", "100%");
+        $("#projects-item").addClass("active");
+        showID("#projects");
+    });
+
+    $("#resume-item").click(function() {
+        hideAllSections();
+        $("#resume").css("height", "100%");
+        $("#resume-item").addClass("active");
+        showID("#resume");
+    });
+
+    $("#courses-item").click(function() {
+        hideAllSections();
+        $("#courses").css("height", "100%");
+        $("#courses-item").addClass("active");
+        showID("#courses");
+    });
+
+    function hideAllSections() {
+        $(".nav-item").removeClass("active");
+        $(".content-item").css("height", "0%");
+        hideID("#about");
+        hideID("#projects");
+        hideID("#resume");
+        hideID("#courses");
     }
 
-    function enableSection(id) {
-        $("#about").removeClass("shown");
-        $("#projects").removeClass("shown");
-        $(id).addClass("shown");
-        if ($(".custom-sidebar").hasClass("sidebar")) $(".custom-sidebar").sidebar("toggle");
+    function hideID(id) {
+        $(id + " .content-sub-item").fadeOut(400);
     }
 
-    function setLayoutPref() {
-        var width = $(window).width();
-        if (width <= 800) {
-            $(".custom-sidebar").addClass("sidebar");
-        } 
+    function showID(id) {
+        $(id + " .content-sub-item").fadeIn(0);
+    }
+
+    function toggleMenu() {
+        if (menuOpen) {
+            menuOpen = false;
+            $(".nav-item-text").fadeOut(150);
+            $(".nav").css("width", "50px");
+            $(".title").css("margin-top", "0px");
+            $(".title").css("margin-left", "0px");
+            $(".title").rotate({
+                duration:300,
+                angle:0,
+                center: ["50%", "50%"],
+                animateTo:-90
+            });
+            $("#expand-item .icon").rotate({
+                duration:500,
+                angle:180,
+                animateTo:0
+            });
+        }
         else {
-            $(".custom-sidebar").remove("sidebar");
-        }
-    }
-
-    function parseURL() {
-        var contents = window.location.href.split("?");
-        if (contents.length == 2) {
-            if (contents[1] === "about") window.location = contents[0];
-            else if (contents[1] == "projects") {
-                enableItem(".projects-item");
-                enableSection("#projects");
-            }
-            else if (contents[1] == "resume") {
-                enableItem(".resume-item");
-                enableSection("#resume");
-            }
-            else {
-                var moreConts = contents[1].split("=");
-                if (moreConts.length == 2 && moreConts[0] == "course") {
-                    if(moreConts[1] === "csca08") {
-                        if (!lockCourses && !lockA08) {
-                            enableItem(".courses-item");
-                            $(".csca08").addClass("custom-active");
-                        }
-                        else {
-                            window.location = contents[0];
-                        }
-                    }
-                    else if (moreConts[1] === "csca48") {
-                        if (!lockCourses && !lockA48) {
-                            enableItem(".courses-item");
-                            $(".csca48").addClass("custom-active");
-                        } else {
-                            window.location = contents[0];
-                        }
-                    }
-                }
-                else {
-                    window.location = contents[0] + "404.html";
-                }
-            }
-        }
-        else if (contents.length > 2) {
-            window.location = contents[0]+"404.html";
+            menuOpen = true;
+            $(".nav-item-text").fadeIn(200);
+            $(".nav").css("width", "180px");
+            $(".title").css("margin-top", "10px");
+            $(".title").css("margin-left", "5px");
+            $(".nav-item-text").removeClass("hide");
+            $(".title").rotate({
+                duration:300,
+                angle:-90,
+                center: ["50%", "50%"],
+                animateTo:0
+            });
+            $("#expand-item .icon").rotate({
+                duration:500,
+                angle:0,
+                animateTo:180
+            });
         }
     }
 
