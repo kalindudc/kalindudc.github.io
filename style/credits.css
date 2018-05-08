@@ -1,7 +1,13 @@
 body {
-    width: 70%;
+    width: 100%;
     flex-direction:column;
     justify-content: flex-start;
+    align-items: center;
+    color: white;
+}
+
+h3 {
+    color: white !important;
 }
 
 .divider {

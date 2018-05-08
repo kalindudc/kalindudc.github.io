@@ -10,11 +10,17 @@
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="lib/semanticUI/semantic.min.css">
         <link rel="stylesheet" type="text/css" href="style/main.css">
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="lib/jQueryRotate/jQueryRotate.js"></script>
     </head>
     <body>
         <div class="nav">
             <div class="title rotate"> <a href="/">WELCOME</a></div>
-            <div class="site-nav">
+            <script>
+                $(".title").rotate({ angle: -90, center: ["15%", "50%"], });
+            </script>
+            <div class="site-nav segment">
                 <div id="about-item" class="nav-item active">
                     <div class="icon"></div>
                     <span class="nav-item-text hide">About</span>
@@ -37,7 +43,7 @@
                 <span class="nav-item-text hide">Close</span>
             </div>
         </div>
-        <div class="content-container">
+        <div class="ui content-container">
             <div id="about" class="content-item">
                 <div class="avatar">
                     <div class="tint"></div>
@@ -64,7 +70,111 @@
             </div>
 
             <div id="projects" class="content-item">
-                
+                <div class="projects-nav">
+                    <span class="popup highlight active" data-title="The Art of Guessing">
+                        <div id="aog" class="projects-nav-item"></div>
+                    </span>
+                    <span class="popup highlight" data-title="Eventalicious">
+                        <div id="eventalicious" class="projects-nav-item"></div>
+                    </span>
+                    <span class="popup highlight" data-title="Advanced Player Controller">
+                        <div id="apc" class="projects-nav-item"></div>
+                    </span>
+                    <span class="popup highlight" data-title="NDC Accounting Solutions">
+                        <div id="ndcacct" class="projects-nav-item"></div>
+                    </span>
+                    
+                </div>
+                <div class="projects-container">
+                    <div id="project-aog" class="project-item">
+                        <div class="project-img">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/cznICEKMN7g" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                        <div class="project-info">
+                            <h1 class="project-title"><a href="http://art-of-guessing.herokuapp.com/">The Art of Guessing</a></h1>
+                            <div class="project-desc">
+                                <p>The Art of Guessing is a multiplayer browser game that consists of one person drawing and everyone else guessing the
+                                    word that describes the drawing. The person who guessed the correct word first wins the round. This multiplayer game
+                                    would also feature player statistics and the ability to use voice to control everything. Players will have the choice
+                                    of joining a public queue or creating their own private lobby. Private lobbies will consist of a name and a password,
+                                    so only users with knowledge of both can join.</p>
+                            </div>
+                            <div class="project-extra extra">
+                                <a target="_blank" class="ui basic label" href="https://github.com/andu0987">Andrei</a>
+                                <a target="_blank" class="ui basic label" href="https://github.com/kalindudc">Kalindu</a>
+                                <a target="_blank" href="https://www.youtube.com/watch?v=cznICEKMN7g">
+                                    <i class="video icon"></i> Demo
+                                </a>
+                                <a target="_blank" href="https://github.com/DoodleCaboodle/TheArtOfGuessing">
+                                    <i class="github icon"></i> Source Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="project-eventalicious" class="project-item">
+                        <div class="project-img">
+                            <img src="media/projects/eventalicious.png"/>
+                        </div>
+                        <div class="project-info">
+                            <h1 class="project-title"><a href="https://cscc10skg.github.io/">Eventalicious</a></h1>
+                            <div class="project-desc">
+                                <p>This web-based application that will enable users to connect with others in real time by projecting various nearby events
+                                    and item promotions surrounding the user. Simply put, this application would inform the user of all accessible social
+                                    events, special promotions or educational gatherings that are happening or will occur in the immediate future based
+                                    on the geographical location of an individual.</p>
+                            </div>
+                            <div class="project-extra extra">
+                                <a target="_blank" class="ui basic label" href="https://github.com/andu0987">Andrei</a>
+                                <a target="_blank" class="ui basic label" href="https://github.com/angelinachoi">Angelina</a>
+                                <a target="_blank" class="ui basic label" href="https://github.com/AntixSkill">Eric</a>
+                                <a target="_blank" class="ui basic label" href="https://github.com/kalindudc">Kalindu</a>
+                                <a target="_blank" class="ui basic label" href="https://github.com/MLCoco">Michael</a>
+                                <a target="_blank" class="ui basic label" href="https://github.com/YufeiCui">Yufei</a>
+                                <a target="_blank" href="https://github.com/CSCC10SKG/CSCC10SKG.github.io/blob/master/P4.SKG.pdf">
+                                    <i class="book icon"></i> Research Paper
+                                </a>
+                                <a target="_blank" href="https://github.com/CSCC10SKG/CSCC10SKG.github.io">
+                                    <i class="github icon"></i> Source Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="project-apc" class="project-item">
+                        <div class="project-img">
+                            <img src="media/projects/apc.png" />
+                        </div>
+                        <div class="project-info">
+                            <h1 class="project-title">Advanced Player Controller</h1>
+                            <div class="project-desc">
+                                <p>A fully customizable first person/third person controller for Unity. This includes a customizable 3D player model as
+                                    well as fully integrated animations.</p>
+                            </div>
+                            <div class="project-extra extra">
+                                <a target="_blank" class="ui basic label" href="https://github.com/kalindudc">Kalindu</a>
+                                <a target="_blank" class="ui basic label" href="https://github.com/sakshaat">Sakshaat</a>
+                                <a target="_blank" href="https://github.com/kalindudc/AdvancedPlayerController">
+                                    <i class="github icon"></i> Source Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="project-ndcacct" class="project-item">
+                        <div class="project-img">
+                            <img src="media/projects/ndcacct.png" />
+                        </div>
+                        <div class="project-info">
+                            <h1 class="project-title"><a href="http://ndcacctsolutions.com/">NDC Accounting Solurions</a></h1>
+                            <div class="project-desc">
+                                <p>Full implementation of a buisiness website for local proffesional accountant. NDC Accounting Solutions provide Bookkeeping,
+                                    Accounting, Payroll &amp; Tax Services to small businesses in Toronto, Greater Toronto and surrounding areas. We
+                                    ensure reliable, accurate &amp; professional services to our clients on a timely fashion.</p>
+                            </div>
+                            <div class="project-extra extra">
+                                <a target="_blank" class="ui basic label" href="https://github.com/kalindudc">Kalindu</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div id="resume" class="content-item">
@@ -72,13 +182,13 @@
             </div>
 
             <div id="courses" class="content-item">
-                HELLO
+                
             </div>
         </div>
+        
+        <div class="footer">Kalindu De Costa. All rights reserved. 2018</div>
 
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
         <script src="lib/semanticUI/semantic.min.js"></script>
-        <script src="lib/jQueryRotate/jQueryRotate.js"></script>
         <script src="js/index.js"></script>
     </body> 
 </html>

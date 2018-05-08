@@ -1,7 +1,18 @@
 (function(){
     "user strict";
 
+    init();
+
     var menuOpen = false;
+    var disableNavPopup = false;
+
+    $(".title").rotate({
+        angle: -90,
+        center: ["15%", "50%"],
+    });
+
+
+    parseURL();
 
     $(".content-container").click(function() {
         if (menuOpen) {
@@ -9,7 +20,15 @@
         }
     });
 
-    $(".popup").popup({ boundary: ".segment" });
+    $(".popup").popup({
+        boundary: ".segment",
+        lastResort: "top center"
+    });
+
+    $("#projects .popup").popup({
+        boundary: ".segment",
+        lastResort: "bottom center"
+    });
 
     $("#expand-item").click(function() {
         toggleMenu();
@@ -43,9 +62,24 @@
         showID("#courses");
     });
 
+    $(".projects-nav-item").click(function() {
+        $(".projects-nav .popup").removeClass("active");
+        $(this).parent().addClass("active");
+        $(".project-item").fadeOut(0);
+        $("#project-" + $(this).attr("id")).fadeIn(0);
+    });
+
+    function init() {
+        hideAllSections();
+        $("#about").css("height", "100%");
+        $("#about-item").addClass("active");
+        showID("#about");
+    }
+
     function hideAllSections() {
         $(".nav-item").removeClass("active");
         $(".content-item").css("height", "0%");
+        //$(".content-item").children().css("display", "none");
         hideID("#about");
         hideID("#projects");
         hideID("#resume");
@@ -70,7 +104,7 @@
             $(".title").rotate({
                 duration:300,
                 angle:0,
-                center: ["50%", "50%"],
+                center: ["15%", "50%"],
                 animateTo:-90
             });
             $("#expand-item .icon").rotate({
@@ -83,13 +117,13 @@
             menuOpen = true;
             $(".nav-item-text").fadeIn(200);
             $(".nav").css("width", "180px");
-            $(".title").css("margin-top", "10px");
+            $(".title").css("margin-top", "10px !important");
             $(".title").css("margin-left", "5px");
             $(".nav-item-text").removeClass("hide");
             $(".title").rotate({
                 duration:300,
                 angle:-90,
-                center: ["50%", "50%"],
+                center: ["15%", "50%"],
                 animateTo:0
             });
             $("#expand-item .icon").rotate({
@@ -98,6 +132,43 @@
                 animateTo:180
             });
         }
+    }
+
+    function parseURL() {
+        var urlSplit = window.location.href.split("?");
+        if (urlSplit.length == 1) {
+           return;
+        }
+        else if (urlSplit.length != 2) {
+            window.location = urlSplit[0]+"404.html"
+        }
+        else {
+            if (urlSplit[1] == "courses") {
+                hideAllSections();
+                $("#courses").css("height", "100%");
+                $("#courses-item").addClass("active");
+                showID("#courses")
+            }
+            else if (urlSplit[1] == "projects") {
+                hideAllSections();
+                $("#projects").css("height", "100%");
+                $("#projects-item").addClass("active");
+                showID("#projects");
+            }
+            else if (urlSplit[1] == "about") {
+                hideAllSections();
+                $("#about").css("height", "100%");
+                $("#about-item").addClass("active");
+                showID("#about");
+            }
+            else if (urlSplit[1] == "resume") {
+                hideAllSections();
+                $("#resume").css("height", "100%");
+                $("#resume-item").addClass("active");
+                showID("#resume");
+            }
+        }
+        
     }
 
 }());
