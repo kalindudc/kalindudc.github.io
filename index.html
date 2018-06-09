@@ -10,35 +10,44 @@
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="lib/semanticUI/semantic.min.css">
         <link rel="stylesheet" type="text/css" href="style/main.css">
+        <link rel="stylesheet" type="text/css" href="style/main-mobile.css">
 
         <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
         <script src="lib/jQueryRotate/jQueryRotate.js"></script>
     </head>
     <body>
         <div class="nav">
+            <div id="" class="expand-item nav-item mobile">
+                <div class="icon"></div>
+                <span class="nav-item-text hide">Close</span>
+            </div>
             <div class="title rotate"> <a href="/">WELCOME</a></div>
             <script>
                 $(".title").rotate({ angle: -90, center: ["15%", "50%"], });
             </script>
             <div class="site-nav segment">
-                <div id="about-item" class="nav-item active">
+                <div id="about-nav" class="about-item nav-item active">
                     <div class="icon"></div>
                     <span class="nav-item-text hide">About</span>
                 </div>
-                <div id="projects-item" class="nav-item">
+                <div id="project-nav" class="projects-item nav-item">
                     <div class="icon"></div>
                     <span class="nav-item-text hide">Projects</span>
                 </div>
-                <div id="resume-item" class="nav-item">
+                <div id="resume-nav" class="resume-item nav-item disabled">
                     <div class="icon"></div>
                     <span class="nav-item-text hide">Resume</span>
                 </div>
-                <div id="courses-item" class="nav-item">
+                <div id="contact-nav" class="contact-item nav-item disabled">
+                    <div class="icon"></div>
+                    <span class="nav-item-text hide">Contact</span>
+                </div>
+                <!-- <div id="courses-item" class="nav-item">
                     <div class="icon"></div>
                     <span class="nav-item-text hide">Courses</span>
-                </div>
+                </div> -->
             </div>
-            <div id="expand-item" class="nav-item">
+            <div id="" class="expand-item nav-item desktop">
                 <div class="icon"></div>
                 <span class="nav-item-text hide">Close</span>
             </div>
@@ -49,7 +58,7 @@
                     <div class="tint"></div>
                 </div>
                 <div class="segment content-sub-item">
-                    <h1 class="info">Hello!</h1>
+                    <p class="info emphasis">Hello!</p>
                     <p class="info">
                         I'm Kalindu, and I am a student of University of Toronto specializing in Computer Science. 
                     </p>
@@ -72,16 +81,16 @@
             <div id="projects" class="content-item">
                 <div class="projects-nav">
                     <span class="popup highlight active" data-title="The Art of Guessing">
-                        <div id="aog" class="projects-nav-item"></div>
+                        <div id="aog" class="projects-nav-item">A</div>
                     </span>
                     <span class="popup highlight" data-title="Eventalicious">
-                        <div id="eventalicious" class="projects-nav-item"></div>
+                        <div id="eventalicious" class="projects-nav-item">E</div>
                     </span>
                     <span class="popup highlight" data-title="Advanced Player Controller">
-                        <div id="apc" class="projects-nav-item"></div>
+                        <div id="apc" class="projects-nav-item">A</div>
                     </span>
                     <span class="popup highlight" data-title="NDC Accounting Solutions">
-                        <div id="ndcacct" class="projects-nav-item"></div>
+                        <div id="ndcacct" class="projects-nav-item">N</div>
                     </span>
                     
                 </div>
@@ -91,7 +100,7 @@
                             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/cznICEKMN7g" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                         </div>
                         <div class="project-info">
-                            <h1 class="project-title"><a href="http://art-of-guessing.herokuapp.com/">The Art of Guessing</a></h1>
+                            <h1 class="project-title"><a target="_blank" href="http://art-of-guessing.herokuapp.com/">The Art of Guessing</a></h1>
                             <div class="project-desc">
                                 <p>The Art of Guessing is a multiplayer browser game that consists of one person drawing and everyone else guessing the
                                     word that describes the drawing. The person who guessed the correct word first wins the round. This multiplayer game
@@ -116,7 +125,7 @@
                             <img src="media/projects/eventalicious.png"/>
                         </div>
                         <div class="project-info">
-                            <h1 class="project-title"><a href="https://cscc10skg.github.io/">Eventalicious</a></h1>
+                            <h1 class="project-title"><a target="_blank" href="https://cscc10skg.github.io/">Eventalicious</a></h1>
                             <div class="project-desc">
                                 <p>This web-based application that will enable users to connect with others in real time by projecting various nearby events
                                     and item promotions surrounding the user. Simply put, this application would inform the user of all accessible social
@@ -163,7 +172,7 @@
                             <img src="media/projects/ndcacct.png" />
                         </div>
                         <div class="project-info">
-                            <h1 class="project-title"><a href="http://ndcacctsolutions.com/">NDC Accounting Solurions</a></h1>
+                            <h1 class="project-title"><a target="_blank" href="http://ndcacctsolutions.com/">NDC Accounting Solurions</a></h1>
                             <div class="project-desc">
                                 <p>Full implementation of a buisiness website for local proffesional accountant. NDC Accounting Solutions provide Bookkeeping,
                                     Accounting, Payroll &amp; Tax Services to small businesses in Toronto, Greater Toronto and surrounding areas. We
@@ -178,10 +187,49 @@
             </div>
 
             <div id="resume" class="content-item">
-
+                <div id="technical-skills" class="resume-content-item">
+                    <div class="section-icon"><div class="icon"></div></div>
+                    <div class="section-info">
+                        <div class="section-title">TECHNICAL SKILLS</div>
+                        <div class="section-content">
+                            <div class="section-item">
+                                <div class="skill-name">Python</div>
+                                <div class="skill-proff skill-level-5"></div>
+                            </div>
+                            <div class="section-item">
+                                <div class="skill-name">Java</div>
+                                <div class="skill-proff skill-level-5"></div>
+                            </div>
+                            <div class="section-item">
+                                <div class="skill-name">JavaScript</div>
+                                <div class="skill-proff skill-level-5"></div>
+                            </div>
+                            <div class="section-item">
+                                <div class="skill-name">Shell</div>
+                                <div class="skill-proff skill-level-4"></div>
+                            </div>
+                            <div class="section-item">
+                                <div class="skill-name">C</div>
+                                <div class="skill-proff skill-level-4"></div>
+                            </div>
+                            <div class="section-item">
+                                <div class="skill-name">C#</div>
+                                <div class="skill-proff skill-level-3"></div>
+                            </div>
+                            <div class="section-item">
+                                <div class="skill-name">NodeJS</div>
+                                <div class="skill-proff skill-level-3"></div>
+                            </div>                            
+                            <div class="section-item">
+                                <div class="skill-name">Android Dev</div>
+                                <div class="skill-proff skill-level-3"></div>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div id="courses" class="content-item">
+            <div id="contact" class="content-item">
                 
             </div>
         </div>

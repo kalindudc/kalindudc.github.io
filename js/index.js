@@ -30,36 +30,36 @@
         lastResort: "bottom center"
     });
 
-    $("#expand-item").click(function() {
+    $(".expand-item").click(function() {
         toggleMenu();
     });
 
-    $("#about-item").click(function() {
+    $(".about-item").click(function() {
         hideAllSections();
         $("#about").css("height", "100%");
-        $("#about-item").addClass("active");
+        $(".about-item").addClass("active");
         showID("#about");
     });
 
-    $("#projects-item").click(function() {
+    $(".projects-item").click(function() {
         hideAllSections();
         $("#projects").css("height", "100%");
-        $("#projects-item").addClass("active");
+        $(".projects-item").addClass("active");
         showID("#projects");
     });
 
-    $("#resume-item").click(function() {
+    $(".resume-item").click(function() {
         hideAllSections();
         $("#resume").css("height", "100%");
-        $("#resume-item").addClass("active");
+        $(".resume-item").addClass("active");
         showID("#resume");
     });
 
-    $("#courses-item").click(function() {
+    $(".contact-item").click(function() {
         hideAllSections();
-        $("#courses").css("height", "100%");
-        $("#courses-item").addClass("active");
-        showID("#courses");
+        $("#contact").css("height", "100%");
+        $(".contact-item").addClass("active");
+        showID("#contact");
     });
 
     $(".projects-nav-item").click(function() {
@@ -72,7 +72,7 @@
     function init() {
         hideAllSections();
         $("#about").css("height", "100%");
-        $("#about-item").addClass("active");
+        $(".about-item").addClass("active");
         showID("#about");
     }
 
@@ -96,6 +96,12 @@
 
     function toggleMenu() {
         if (menuOpen) {
+            if ($(".mobile").css("display") !== "none") {
+                $(".nav-item").css("display", "none");
+                $(".nav .title").css("display", "none");
+                $(".nav").css("height", "50px");
+            }
+
             menuOpen = false;
             $(".nav-item-text").fadeOut(150);
             $(".nav").css("width", "50px");
@@ -107,13 +113,19 @@
                 center: ["15%", "50%"],
                 animateTo:-90
             });
-            $("#expand-item .icon").rotate({
+            $(".expand-item .icon").rotate({
                 duration:500,
                 angle:180,
                 animateTo:0
             });
         }
         else {
+            if ($(".mobile").css("display") !== "none") {
+                $(".nav-item").css("display", "flex");
+                $(".nav .title").css("display", "flex");
+                $(".nav").css("height", "100%");
+            }
+
             menuOpen = true;
             $(".nav-item-text").fadeIn(200);
             $(".nav").css("width", "180px");
@@ -126,7 +138,7 @@
                 center: ["15%", "50%"],
                 animateTo:0
             });
-            $("#expand-item .icon").rotate({
+            $(".expand-item .icon").rotate({
                 duration:500,
                 angle:0,
                 animateTo:180
@@ -170,5 +182,9 @@
         }
         
     }
+
+    $('.disabled').click(function(e){
+        e.preventDefault();
+    });
 
 }());
