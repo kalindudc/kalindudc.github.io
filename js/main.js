@@ -32,34 +32,55 @@
     siteOpen = !siteOpen;
   });
 
+  $(".site-nav-item").click(function() {
+    $(".site-nav-item").removeClass("active-nav");
+    $(this).addClass("active-nav");
+    $(".site-content-item").removeClass("active-content");
+    $("#" + $(this).attr("id").split("-item")[0]).addClass("active-content");
+  });
+
+  let multiple = 28;
+
   var navAnims = anime.timeline();
   navAnims.add({
-    targets: '#about-item', translateY: 10, offset: 0,
+    targets: '.nav-item-1', translateY: 10+(multiple*0), offset: 0,
     easing: 'easeInOutQuart'
   }).add({
-    targets: '#featured-item', translateY: 40, offset: 0,
+    targets: '.nav-item-2', translateY: 10+(multiple*1), offset: 0,
     easing: 'easeInOutQuart'
   }).add({
-    targets: '#projects-item', translateY: 70, offset: 0,
+    targets: '.nav-item-3', translateY: 10+(multiple*2), offset: 0,
     easing: 'easeInOutQuart'
   }).add({
-    targets: '#resume-item', translateY: 100, offset: 0,
+    targets: '.nav-item-4', translateY: 10+(multiple*3), offset: 0,
     easing: 'easeInOutQuart'
   }).add({
-    targets: '#contact-item', translateY: 130, offset: 0,
+    targets: '.nav-item-5', translateY: 10+(multiple*4), offset: 0,
+    easing: 'easeInOutQuart'
+  }).add({
+    targets: '.nav-item-6', translateY: 10+(multiple*5), offset: 0,
+    easing: 'easeInOutQuart'
+  }).add({
+    targets: '.nav-item-7', translateY: 10+(multiple*6), offset: 0,
+    easing: 'easeInOutQuart'
+  }).add({
+    targets: '.nav-item-8', translateY: 10+(multiple*7), offset: 0,
+    easing: 'easeInOutQuart'
+  }).add({
+    targets: '.nav-item-9', translateY: 10+(multiple*8), offset: 0,
+    easing: 'easeInOutQuart'
+  }).add({
+    targets: '.nav-item-10', translateY: 10+(multiple*9), offset: 0,
+    easing: 'easeInOutQuart'
+  }).add({
+    targets: '.nav-item-11', translateY: 10+(multiple*10), offset: 0,
     easing: 'easeInOutQuart'
   });
 
   anime({
-    targets: '.site-nav',
+    targets: '.site-nav, .site-content, .site-content-item',
     opacity: 1,
-    duration: 1000,
-    easing: 'linear'
-  });
-
-  anime({
-    targets: '.site-nav-item',
-    easing: 'linear',
-    loop: true
+    duration: 2000,
+    easing: 'easeInOutQuart'
   });
 }());
