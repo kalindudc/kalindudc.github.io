@@ -197,6 +197,78 @@ body {
   margin-left: 0px;
 }
 
+.features-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.feature-item {
+  transition-duration: 0.2s;
+  width: 50%;
+  height: 50%;
+  padding: 0;
+  margin: 0; 
+}
+
+#search-engine {
+  background: url('../media/projects/search-engine.jpg');
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.feature-item:hover {
+  background-size: auto 120% !important;
+}
+
+.feature-item:hover .fi-title {
+  animation: glowing 3000ms infinite;
+}
+
+.feature-item:hover .on-hover {
+  display: block;
+}
+
+.item-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.fi-title a {
+  font-size: 14pt;
+  text-decoration: none;
+}
+
+.fi-desc {
+  padding: 10px;
+}
+
+.fi-desc p{
+  font-size: 9pt;
+  text-align: center;
+}
+
+.fi-source{
+}
+
+.fi-source a{
+  text-decoration: none;
+}
+
+.on-hover {
+  display: none;
+}
+
 @media (max-width: 800px) {
 
   .mobile {

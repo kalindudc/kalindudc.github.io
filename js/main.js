@@ -1,5 +1,7 @@
 (function(){
 
+  "use strict";
+
   if ($(document).width() <= 800) {
     anime({
       targets: '.site-nav',
