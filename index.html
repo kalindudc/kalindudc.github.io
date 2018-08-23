@@ -2,85 +2,60 @@
 <html>
   <head>
     <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">  
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel=stylesheet href="https://s3-us-west-2.amazonaws.com/colors-css/2.2.0/colors.min.css">
     <link type="text/css" rel="stylesheet" href="style/main.css" />
   </head>
   <body>
+    <div class="navbar">
+      <div class="navbar-section">
+        <div class="logo navbar-item"></div>
+      </div>
+      <div class="navbar-section">
+        <div class="navbar-item active-nav">About</div>
+        <div class="navbar-item">Featured Projects</div>
+        <div class="navbar-item">All Projects</div>
+        <div class="navbar-item">Resume</div>
+        <div class="navbar-item">Contact</div>
+      </div>
+    </div>
+
     <div class="body-content">
-      <div class="site-nav">
-        <div id="" class="nav-item-1 separator">//menu </div>
-        <div id="about-item" class="nav-item-2 site-nav-item active-nav ind-1">About</div>
-        <div id="featured-item" class="nav-item-3 site-nav-item ind-1">Featured Projects</div>
-        <div id="projects-item" class="nav-item-4 site-nav-item ind-1">Projects Map</div>
-        <div id="resume-item" class="nav-item-5 site-nav-item ind-1">Resume</div>
-        <div id="contact-item" class="nav-item-6 site-nav-item ind-1">Contact</div>
-        <div id="" class="nav-item-7 separator ind-1">//courses </div>
-        <div id="" class="nav-item-8 site-nav-item ind-1">CSCA08</div>
-      </div>
+      <div id="about" class="content-item active-content">
+        <div class="mobile">About</div>
+        <div class="avatar"></div>
+        <div class="content-info">
+          <div class="content-info-item">
+            <span class="">Hello!</span>
 
-      <div class="mobile site-nav-expand">
-        <i class="fas fa-caret-right"></i>
-      </div>
-
-      <div class="site-content">
-        <div id="about" class="site-content-item">
-          <div class="avatar"></div>
-          <div class="name">
-            { <span class="name gray">Kalindu De Costa</span> }
+            I'm Kalindu, and I am a student of <span class="">University of Toronto</span> specializing in <span class="">Computer Science</span>.
           </div>
-          <div class="desc">
-            <p>
-              <span class="red">Hello!</span>
-
-              I'm Kalindu, and I am a student of <span class="red">University of Toronto</span> specializing in <span class="red">Computer Science</span>.
-            </p>
-            <p>
-              I love <span class="aqua">developing web apps</span>, <span class="aqua">UX</span> / <span class="aqua">UI</span> design and most aspects of <span class="aqua">software development</span>. I also enjoy playing around with <span class="aqua">game development</span> using <span class="aqua">Unity</span> and <span class="aqua">Java</span>.
-            </p>
-            <p>
-              I am a regular user of <a href="https://git-scm.com/" class="lime">git</a> for <span class="orange">version control</span> along with <span class="lime">github</span> and all my projects can be found within <span class="lime">github</span>.
-            </p>
-            <p>
-              Also check out my <span class="teal">resume</span> for a full list of qualifications.
-            </p>
+          <div class="content-info-item">
+            I love <span class="">developing web apps</span>, <span class="">UX</span> / <span class="">UI</span> design and most aspects of <span class="">software development</span>. I also enjoy playing around with <span class="">game development</span> using <span class="">Unity</span> and <span class="">Java</span>.
+          </div>
+          <div class="content-info-item">
+            I am a regular user of <a href="https://git-scm.com/" class="">git</a> for <span class="">version control</span> along with <span class="">github</span> and all my projects can be found within <span class="">github</span>.
+          </div>
+          <div class="content-info-item">
+            Also check out my <span class="">resume</span> for a full list of qualifications.
           </div>
         </div>
-        <div id="featured" class="site-content-item active-content">
-          <div class="features-container">
-            <div id="search-engine" class="feature-item">
-              <div class="item-overlay">
-                <div class="fi-title"><a href="https://search-engine-utsc.herokuapp.com/" class="aqua">UTSC Document Search</a></div>
-                <div class="fi-desc on-hover">
-                  <p class="white">
-                    A search engine for instructors and students at UTSC. Students and instructors can upload and search for documents. The students and instructors have the option to create an account and the uploaded files will be indexed separately to allow for file filtering. Any visitor of the application can use the query system to search through the documents.
-                  </p>
-                </div>
-                <div class="fi-source on-hover"><a class="white" href="https://github.com/C01-TEAM5/search-engine-utsc"><i class="fab fa-github"></i> Source Code</a></div>
-                <div class="fi-collabs on-hover"></div>
-              </div>
-            </div>
-            <div class="feature-item">
+      </div>
 
-            </div>
-            <div class="feature-item">
+      <div class="mobile separator"></div>
 
-            </div>
-            <div class="feature-item">
-
-            </div>
+      <div id="featured" class="content-item">
+        <div class="mobile">Featured Projects</div>
+        <div class="content-info">
+          <div class="content-info-item">
+            
           </div>
         </div>
-        <div id="projects" class="site-content-item">
-          projects
-        </div>
-        <div id="resume" class="site-content-item">
-          resume
-        </div>
-        <div id="contact" class="site-content-item">
-          contact
-        </div>
       </div>
+
+      <div class="next-button"><i class="fas fa-caret-down"></i></div>
     </div>
 
     <div class="footer">
