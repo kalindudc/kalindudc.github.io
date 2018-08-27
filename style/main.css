@@ -280,6 +280,34 @@ body {
   background-size: 110% auto;
 }
 
+#eventalicious {
+  background: url("../media/projects/eventalicious.png");
+  background-size: 110% auto;
+}
+
+#ndcacct {
+  background: url("../media/projects/ndcacct.png");
+  background-size: 150% auto;
+}
+
+#algo-vis {
+  background: url("../media/projects/algo-vis.png");
+  background-size: 150% auto;
+}
+
+.work-exp {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.exp-item {
+  
+}
+
 @media (max-width: 800px) {
   .project {
     margin: 0;
