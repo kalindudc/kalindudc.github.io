@@ -11,9 +11,11 @@
 :root {
   --color1 : #0f1518;
   --color2 : #1f252a;
-  --color3 : #696758;
+  --color3 : #c3c9cc;
   --color4 : #dfe9e9;
   --color5 : #ffffff;
+  --color6 : #44474a;
+  --color7 : #c8c8c8;
 
   --font-normal: 12pt;
   --font-emphasis: 12pt;
@@ -85,6 +87,13 @@ body {
   min-height: 100%;
 }
 
+#home i {
+  font-size: 5pt;
+  line-height: 25px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
 #home, #projects, #contact {
   background: linear-gradient(var(--color1), var(--color2));
 }
@@ -109,12 +118,29 @@ body {
   margin-bottom: 5px;
 }
 
+.color1 {
+  color: var(--color5);
+  text-decoration: none;
+}
+
 .color2 {
   color: var(--color1);
+  text-decoration: none;
 }
 
 .color3 {
   color: var(--color2);
+  text-decoration: none;
+}
+
+.color4 {
+  color: var(--color6);
+  text-decoration: none;
+}
+
+.color5 {
+  color: var(--color7);
+  text-decoration: none;
 }
 
 .color2 .separator {
@@ -295,7 +321,7 @@ body {
   background-size: 150% auto;
 }
 
-.work-exp {
+.section-content{
   width: 100%;
   height: auto;
   display: flex;
@@ -305,7 +331,29 @@ body {
 }
 
 .exp-item {
-  
+  width: 90%;
+  height: 100px;
+  border: 1px solid var(--color3);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.exp-item div {
+  margin-bottom: 5px;
+}
+
+.social {
+  margin-top: 20px;
+}
+
+.footer {
+  margin-top: 30px;
+  font-size: 8pt;
+}
+
+.footer i {
+  font-size: 8pt;
 }
 
 @media (max-width: 800px) {
