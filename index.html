@@ -2,104 +2,143 @@
 <html>
   <head>
     <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400,600,800" rel="stylesheet">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel=stylesheet href="https://s3-us-west-2.amazonaws.com/colors-css/2.2.0/colors.min.css">
+    <link type="text/css" rel="stylesheet" href="style/font.css" />
     <link type="text/css" rel="stylesheet" href="style/main.css" />
   </head>
   <body>
-    <div class="navbar">
-      <div class="navbar-section">
-        <div class="logo navbar-item"></div>
-      </div>
-      <div class="navbar-section">
-        <div id="about-item" class="navbar-item active-nav" data-index=0>About</div>
-        <div id="featured-item" class="navbar-item" data-index=1>Featured Projects</div>
-        <div id="projects-item" class="navbar-item" data-index=2>All Projects</div>
-        <div id="resume-item" class="navbar-item" data-index=3>Resume</div>
-        <div id="contact-item" class="navbar-item" data-index=4>Contact</div>
+    <div id="home" class="content-section">
+      <div class="inner-section">
+        <div class="header">
+          <div class="separator"></div>
+          KALINDU DE COSTA
+        </div>
+        <div class="info font-large">
+          SOFTWARE ENGINEER & WEB DEVELOPER
+        </div>
+        <div class="info font-small">
+        </div>
       </div>
     </div>
-
-    <div class="body-content">
-      <div id="about" class="content-item active-content">
-        <div class="mobile">About</div>
-        <div class="avatar"></div>
-        <div class="content-info">
-          <div class="content-info-item">
-            <span class="">Hello!</span>
-
-            I'm Kalindu, and I am a student of <span class="">University of Toronto</span> specializing in <span class="">Computer Science</span>.
-          </div>
-          <div class="content-info-item">
-            I love <span class="">developing web apps</span>, <span class="">UX</span> / <span class="">UI</span> design and most aspects of <span class="">software development</span>. I also enjoy playing around with <span class="">game development</span> using <span class="">Unity</span> and <span class="">Java</span>.
-          </div>
-          <div class="content-info-item">
-            I am a regular user of <a href="https://git-scm.com/" class="">git</a> for <span class="">version control</span> along with <span class="">github</span> and all my projects can be found within <span class="">github</span>.
-          </div>
-          <div class="content-info-item">
-            Also check out my <span class="">resume</span> for a full list of qualifications.
+    <div id="about" class="content-section">
+      <div class="inner-section">
+        <div class="section-header font-large2">
+          <div class="color2 font-large2">
+            <div class="separator"></div>
+            ABOUT
           </div>
         </div>
-      </div>
+        <div class="about-content">
+          <div class="avatar"></div>
+          <div class="content-info">
+            <div class="info color3 font-medium">
+              <span class="indent"></span>I am an all around software engineer and web developer. I work in languages like Python, Java, C, HTML/CSS, and JavaScript. I also work with SQL/NoSQL databases like DB2, Oracle, MongoDB to build backend servers. I always work to build scalable and highly optimized application. I always rely on UnitTests and applications like CircleCI for continous integration to deliver the best product.
+            </div>
 
-      <div class="mobile separator"></div>
-
-      <div id="featured" class="content-item">
-        <div class="mobile">Featured Projects</div>
-        <div class="content-info">
-          pro1
-        </div>
-        <div class="content-info">
-          pro2
-        </div>
-        <div class="content-info">
-          pro3
-        </div>
-        <div class="content-info">
-          pro4
-        </div>
-      </div>
-
-      <div class="mobile separator"></div>
-
-      <div id="projects" class="content-item">
-        <div class="mobile">Projects</div>
-        <div class="content-info">
-          <div class="content-info-item">
-            projects
+            <div class="info color3 font-medium">
+              <span class="indent"></span>Most of my projects are version controlled using git and most can be found on github or bitbucket. I regularly practice excellent project structure to ease maintainability. All of my work is done according to current industry standards and I tackle all problems with a user centered design. As a developer it is important that I always write code that conforms to modern HCI concepts and write code that is easily scalable to give the user the best experience.
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="mobile separator"></div>
-
-      <div id="resume" class="content-item">
-        <div class="mobile">Resume</div>
-        <div class="content-info">
-          <div class="content-info-item">
-            resume
-          </div>
-        </div>
-      </div>
-
-      <div class="mobile separator"></div>
-
-      <div id="contact" class="content-item">
-        <div class="mobile">Contact</div>
-        <div class="content-info">
-          <div class="content-info-item">
-            contact
-          </div>
-        </div>
-      </div>
-
-      <div class="next-button"><i class="fas fa-caret-down"></i></div>
     </div>
+    <div id="projects" class="content-section">
+      <div class="inner-section">
+        <div class="section-header font-large2">
+          <div class="font-large2">
+            <div class="separator"></div>
+            PROJECTS
+          </div>
+        </div>
 
-    <div class="footer">
-      Copyright <i class="far fa-copyright"></i> Kalindu De Costa. All rights reserved. 2018
+        <div class="projects-section">
+          <div class="project">
+            <div id="search-engine" class="project-pic">
+              <div class="project-desc font-small">
+                Designed and developed a search engine for instructors and students at UTSC. Students and instructors can upload and search for documents. The students and instructors have the option to create an account and the uploaded files will be indexed separately to allow for file filtering. Any visitor of the application can use the query system to search through the documents.
+              </div>
+            </div>
+            <div class="project-title font-large3"><a href="https://search-engine-utsc.herokuapp.com/" class="font-large3" target="_blank">UTSC Document Search  <i class="fas fa-link"></i></a><span class="indent2"></span> <a href="https://github.com/C01-TEAM5/search-engine-utsc" class="font-large3" target="_blank"><i class="fab fa-github-square"></i></a></div>
+            <div class="project-skills">
+              <div class="skill-item">JAVA</div>
+              <div class="skill-item">HTML</div>
+              <div class="skill-item">CSS</div>
+              <div class="skill-item">JAVASCRIPT</div>
+              <div class="skill-item">MAVEN</div>
+              <div class="skill-item">TOMCAT</div>
+              <div class="skill-item">MONGODB</div>
+              <div class="skill-item">AWS</div>
+            </div>
+            <div class="project-collabs">
+              <div class="collab-item"><a href="https://github.com/argerrard" target="_blank">Andrew </a></div>
+              <div class="collab-item"><a href="https://github.com/cchoww" target="_blank">Chris </a></div>
+              <div class="collab-item"><a href="https://github.com/emilyliao55" target="_blank">Emily </a></div>
+              <div class="collab-item"><a href="https://github.com/kalindudc" target="_blank">Kalindu </a></div>
+            </div>
+          </div>
+
+          <div class="project">
+            <div id="aog" class="project-pic">
+              <div class="project-desc font-small">
+                The Art of Guessing is a multiplayer browser game that consists of one person drawing and everyone else guessing the word that describes the drawing. The person who guessed the correct word first wins the round. This multiplayer game would also feature player statistics and the ability to use voice to control everything. Players will have the choice of joining a public queue or creating their own private lobby. Private lobbies will consist of a name and a password, so only users with knowledge of both can join.
+              </div>
+            </div>
+            <div class="project-title font-large3"><a href="https://art-of-guessing.herokuapp.com/" class="font-large3" target="_blank">The Art of Guessing  <i class="fas fa-link"></i></a><span class="indent2"></span> <a href="https://github.com/DoodleCaboodle/TheArtOfGuessing" class="font-large3" target="_blank"><i class="fab fa-github-square"></i></a></div>
+            <div class="project-skills">
+              <div class="skill-item">HTML</div>
+              <div class="skill-item">CSS</div>
+              <div class="skill-item">JAVASCRIPT</div>
+              <div class="skill-item">NODEJS</div>
+              <div class="skill-item">MONGODB</div>
+            </div>
+            <div class="project-collabs">
+              <div class="collab-item"><a href="https://github.com/andu0987" target="_blank">Andrei </a></div>
+              <div class="collab-item"><a href="https://github.com/kalindudc" target="_blank">Kalindu </a></div>
+            </div>
+          </div>
+
+          <div class="project">
+            <div id="apc" class="project-pic">
+              <div class="project-desc font-small">
+                A fully customizable first person/third person controller for Unity. This includes a customizable 3D player model as well as fully integrated animations.
+              </div>
+            </div>
+            <div class="project-title font-large3">Advanced Player Controller<span class="indent2"></span> <a href="https://github.com/kalindudc/AdvancedPlayerController" class="font-large3" target="_blank"><i class="fab fa-github-square"></i></a></div>
+            <div class="project-skills">
+              <div class="skill-item">Unity</div>
+              <div class="skill-item">C#</div>
+            </div>
+            <div class="project-collabs">
+              <div class="collab-item"><a href="https://github.com/kalindudc" target="_blank">Kalindu </a></div>
+              <div class="collab-item"><a href="https://github.com/sakshaat" target="_blank">Sakshaat </a></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div id="experience" class="content-section">
+      <div class="inner-section">
+        <div class="section-header font-large2">
+          <div class="color2 font-large2">
+            <div class="separator"></div>
+            WORK EXPERIENCE & EDUCATION
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="contact" class="content-section">
+      <div class="inner-section">
+        <div class="section-header font-large2">
+          <div class="font-large2">
+            <div class="separator"></div>
+            CONTACT ME
+          </div>
+        <div>
+      </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" anonymous></script>
