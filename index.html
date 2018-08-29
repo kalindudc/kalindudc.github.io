@@ -1,242 +1,254 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<html class="sr">
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400,600,800" rel="stylesheet">
 
-        <link rel="shortcut icon" type="image/x-icon" href="media/avatar.png" />
-        <title>Kalindu De Costa</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="style/font.css" />
+    <link type="text/css" rel="stylesheet" href="style/main.css" />
 
-        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="lib/semanticUI/semantic.min.css">
-        <link rel="stylesheet" type="text/css" href="style/main.css">
-        <link rel="stylesheet" type="text/css" href="style/main-mobile.css">
-
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-        <script src="lib/jQueryRotate/jQueryRotate.js"></script>
-    </head>
-    <body>
-        <div class="nav">
-            <div id="" class="expand-item nav-item mobile">
-                <div class="icon"></div>
-                <span class="nav-item-text hide">Close</span>
-            </div>
-            <div class="title rotate"> <a href="/">WELCOME</a></div>
-            <script>
-                $(".title").rotate({ angle: -90, center: ["15%", "50%"], });
-            </script>
-            <div class="site-nav segment">
-                <div id="about-nav" class="about-item nav-item active">
-                    <div class="icon"></div>
-                    <span class="nav-item-text hide">About</span>
-                </div>
-                <div id="project-nav" class="projects-item nav-item">
-                    <div class="icon"></div>
-                    <span class="nav-item-text hide">Projects</span>
-                </div>
-                <div id="resume-nav" class="resume-item nav-item disabled">
-                    <div class="icon"></div>
-                    <span class="nav-item-text hide">Resume</span>
-                </div>
-                <div id="contact-nav" class="contact-item nav-item disabled">
-                    <div class="icon"></div>
-                    <span class="nav-item-text hide">Contact</span>
-                </div>
-                <!-- <div id="courses-item" class="nav-item">
-                    <div class="icon"></div>
-                    <span class="nav-item-text hide">Courses</span>
-                </div> -->
-            </div>
-            <div id="" class="expand-item nav-item desktop">
-                <div class="icon"></div>
-                <span class="nav-item-text hide">Close</span>
-            </div>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+		  ScrollReveal({ duration: 1000 });
+	  </script>
+  </head>
+  <body>
+    <div id="home" class="content-section">
+      <div class="inner-section">
+        <div class="header load-hidden">
+          <div class="separator"></div>
+          KALINDU DE COSTA
         </div>
-        <div class="ui content-container">
-            <div id="about" class="content-item">
-                <div class="avatar">
-                    <div class="tint"></div>
-                </div>
-                <div class="segment content-sub-item">
-                    <p class="info emphasis">Hello!</p>
-                    <p class="info">
-                        I'm Kalindu, and I am a student of University of Toronto specializing in Computer Science. 
-                    </p>
-                    <div class="spacing"></div>                        
-                    <p class="info">
-                        I love <span class="popup highlight" data-title="Web Development" data-content="The web development process includes web design, web content development, client-side/server-side scripting and network security configuration, among other tasks.">developing web apps</span>, <span class="popup highlight" data-title="User Experience Design" data-content="The process of enhancing user satisfaction by improving the usability, accessibility, and pleasure provided in the interaction with the product with HCI design.">UX</span> / <span class="popup highlight" data-title="User Interface Design" data-content="The design of user interfaces for machines and software, such as computers, home appliances, mobile devices, and other electronic
-                        devices.">UI</span> design and most aspects of software development. I also enjoy playing around with game development using <a target="_blank" class="highlight" href="https://unity3d.com/">Unity</a> and <a target="_blank" class="highlight" href="https://www.blender.org/">Blender</a>.
-                    </p>
-                    <div class="spacing"></div>
-                    <p class="info">
-                        I am a regular user of git for version control along with <a target="_blank" class="highlight" href="https://github.com/kalindudc">github</a> and you can find most of my <a class="ui projects-item" class="highlight" href="javascript: void(0)">projects</a> uploaded there.
-                    </p>
-                    <div class="spacing"></div>
-                    <p class="info">
-                        Also check out my <a class="ui resume-item" class="highlight" href="javascript: void(0)">resume</a> for a full list of qualifications.
-                    </p>
-                </div>
-            </div>
-
-            <div id="projects" class="content-item">
-                <div class="projects-nav">
-                    <span class="popup highlight active" data-title="The Art of Guessing">
-                        <div id="aog" class="projects-nav-item">A</div>
-                    </span>
-                    <span class="popup highlight" data-title="Eventalicious">
-                        <div id="eventalicious" class="projects-nav-item">E</div>
-                    </span>
-                    <span class="popup highlight" data-title="Advanced Player Controller">
-                        <div id="apc" class="projects-nav-item">A</div>
-                    </span>
-                    <span class="popup highlight" data-title="NDC Accounting Solutions">
-                        <div id="ndcacct" class="projects-nav-item">N</div>
-                    </span>
-                    
-                </div>
-                <div class="projects-container">
-                    <div id="project-aog" class="project-item">
-                        <div class="project-img">
-                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/cznICEKMN7g" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        </div>
-                        <div class="project-info">
-                            <h1 class="project-title"><a target="_blank" href="http://art-of-guessing.herokuapp.com/">The Art of Guessing</a></h1>
-                            <div class="project-desc">
-                                <p>The Art of Guessing is a multiplayer browser game that consists of one person drawing and everyone else guessing the
-                                    word that describes the drawing. The person who guessed the correct word first wins the round. This multiplayer game
-                                    would also feature player statistics and the ability to use voice to control everything. Players will have the choice
-                                    of joining a public queue or creating their own private lobby. Private lobbies will consist of a name and a password,
-                                    so only users with knowledge of both can join.</p>
-                            </div>
-                            <div class="project-extra extra">
-                                <a target="_blank" class="ui basic label" href="https://github.com/andu0987">Andrei</a>
-                                <a target="_blank" class="ui basic label" href="https://github.com/kalindudc">Kalindu</a>
-                                <a target="_blank" href="https://www.youtube.com/watch?v=cznICEKMN7g">
-                                    <i class="video icon"></i> Demo
-                                </a>
-                                <a target="_blank" href="https://github.com/DoodleCaboodle/TheArtOfGuessing">
-                                    <i class="github icon"></i> Source Code
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="project-eventalicious" class="project-item">
-                        <div class="project-img">
-                            <img src="media/projects/eventalicious.png"/>
-                        </div>
-                        <div class="project-info">
-                            <h1 class="project-title"><a target="_blank" href="https://cscc10skg.github.io/">Eventalicious</a></h1>
-                            <div class="project-desc">
-                                <p>This web-based application that will enable users to connect with others in real time by projecting various nearby events
-                                    and item promotions surrounding the user. Simply put, this application would inform the user of all accessible social
-                                    events, special promotions or educational gatherings that are happening or will occur in the immediate future based
-                                    on the geographical location of an individual.</p>
-                            </div>
-                            <div class="project-extra extra">
-                                <a target="_blank" class="ui basic label" href="https://github.com/andu0987">Andrei</a>
-                                <a target="_blank" class="ui basic label" href="https://github.com/angelinachoi">Angelina</a>
-                                <a target="_blank" class="ui basic label" href="https://github.com/AntixSkill">Eric</a>
-                                <a target="_blank" class="ui basic label" href="https://github.com/kalindudc">Kalindu</a>
-                                <a target="_blank" class="ui basic label" href="https://github.com/MLCoco">Michael</a>
-                                <a target="_blank" class="ui basic label" href="https://github.com/YufeiCui">Yufei</a>
-                                <a target="_blank" href="https://github.com/CSCC10SKG/CSCC10SKG.github.io/blob/master/P4.SKG.pdf">
-                                    <i class="book icon"></i> Research Paper
-                                </a>
-                                <a target="_blank" href="https://github.com/CSCC10SKG/CSCC10SKG.github.io">
-                                    <i class="github icon"></i> Source Code
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="project-apc" class="project-item">
-                        <div class="project-img">
-                            <img src="media/projects/apc.png" />
-                        </div>
-                        <div class="project-info">
-                            <h1 class="project-title">Advanced Player Controller</h1>
-                            <div class="project-desc">
-                                <p>A fully customizable first person/third person controller for Unity. This includes a customizable 3D player model as
-                                    well as fully integrated animations.</p>
-                            </div>
-                            <div class="project-extra extra">
-                                <a target="_blank" class="ui basic label" href="https://github.com/kalindudc">Kalindu</a>
-                                <a target="_blank" class="ui basic label" href="https://github.com/sakshaat">Sakshaat</a>
-                                <a target="_blank" href="https://github.com/kalindudc/AdvancedPlayerController">
-                                    <i class="github icon"></i> Source Code
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="project-ndcacct" class="project-item">
-                        <div class="project-img">
-                            <img src="media/projects/ndcacct.png" />
-                        </div>
-                        <div class="project-info">
-                            <h1 class="project-title"><a target="_blank" href="http://ndcacctsolutions.com/">NDC Accounting Solurions</a></h1>
-                            <div class="project-desc">
-                                <p>Full implementation of a buisiness website for local proffesional accountant. NDC Accounting Solutions provide Bookkeeping,
-                                    Accounting, Payroll &amp; Tax Services to small businesses in Toronto, Greater Toronto and surrounding areas. We
-                                    ensure reliable, accurate &amp; professional services to our clients on a timely fashion.</p>
-                            </div>
-                            <div class="project-extra extra">
-                                <a target="_blank" class="ui basic label" href="https://github.com/kalindudc">Kalindu</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="resume" class="content-item">
-                <div id="technical-skills" class="resume-content-item">
-                    <div class="section-icon"><div class="icon"></div></div>
-                    <div class="section-info">
-                        <div class="section-title">TECHNICAL SKILLS</div>
-                        <div class="section-content">
-                            <div class="section-item">
-                                <div class="skill-name">Python</div>
-                                <div class="skill-proff skill-level-5"></div>
-                            </div>
-                            <div class="section-item">
-                                <div class="skill-name">Java</div>
-                                <div class="skill-proff skill-level-5"></div>
-                            </div>
-                            <div class="section-item">
-                                <div class="skill-name">JavaScript</div>
-                                <div class="skill-proff skill-level-5"></div>
-                            </div>
-                            <div class="section-item">
-                                <div class="skill-name">Shell</div>
-                                <div class="skill-proff skill-level-4"></div>
-                            </div>
-                            <div class="section-item">
-                                <div class="skill-name">C</div>
-                                <div class="skill-proff skill-level-4"></div>
-                            </div>
-                            <div class="section-item">
-                                <div class="skill-name">C#</div>
-                                <div class="skill-proff skill-level-3"></div>
-                            </div>
-                            <div class="section-item">
-                                <div class="skill-name">NodeJS</div>
-                                <div class="skill-proff skill-level-3"></div>
-                            </div>                            
-                            <div class="section-item">
-                                <div class="skill-name">Android Dev</div>
-                                <div class="skill-proff skill-level-3"></div>
-                            </div>                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="contact" class="content-item">
-                
-            </div>
+        <div class="info font-large title load-hidden">
+          SOFTWARE ENGINEER & WEB DEVELOPER
         </div>
-        
-        <div class="footer">Kalindu De Costa. All rights reserved. 2018</div>
+        <div class="info font-small color5 titleOther load-hidden">
+          NATIVE APPLICATIONS  <i class="fas fa-circle"></i>  WEB APPLICATIONS <i class="fas fa-circle"></i>  GAME DEVELOPMENT  <i class="fas fa-circle"></i>  GRAPHIC DESIGN
+        </div>
+      </div>
+    </div>
+    <div id="about" class="content-section">
+      <div class="inner-section">
+        <div class="section-header font-large2 load-hidden">
+          <div class="color2 font-large2">
+            <div class="separator"></div>
+            ABOUT
+          </div>
+        </div>
+        <div class="about-content">
+          <div class="avatar load-hidden"></div>
+          <div class="content-info">
+            <div class="info color3 font-medium load-hidden">
+              <span class="indent"></span>I am an all around software engineer and web developer. I work in languages like Python, Java, C, HTML/CSS, and JavaScript. I also work with SQL/NoSQL databases like DB2, Oracle, MongoDB to build backend servers. I always work to build scalable and highly optimized application. I heavily rely on UnitTests and applications like CircleCI for continous integration to deliver the best product.
+            </div>
 
-        <script src="lib/semanticUI/semantic.min.js"></script>
-        <script src="js/index.js"></script>
-    </body> 
+            <div class="info color3 font-medium load-hidden">
+              <span class="indent"></span>All of my projects are version controlled using git and most can be found on github or bitbucket. I regularly practice excellent project structure to ease maintainability. All of my work is done according to current industry standards and I tackle all problems with a user centered design. As a developer it is important that I always write code that conforms to modern HCI concepts and write code that is easily scalable to give the user the best experience.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="projects" class="content-section">
+      <div class="inner-section">
+        <div class="section-header font-large2 load-hidden">
+          <div class="font-large2">
+            <div class="separator"></div>
+            PROJECTS
+          </div>
+        </div>
+
+        <div class="projects-section">
+          <div class="project">
+            <div id="search-engine" class="project-pic load-hidden">
+              <div class="project-desc font-small">
+                Designed and developed a search engine for instructors and students at UTSC. Students and instructors can upload and search for documents. The students and instructors have the option to create an account and the uploaded files will be indexed separately to allow for file filtering. Any visitor of the application can use the query system to search through the documents.
+              </div>
+            </div>
+            <div class="project-title font-large3 load-hidden"><a href="https://search-engine-utsc.herokuapp.com/" class="font-large3" target="_blank">UTSC Document Search  <i class="fas fa-link"></i></a><span class="indent2"></span> <a href="https://github.com/C01-TEAM5/search-engine-utsc" class="font-large3" target="_blank"><i class="fab fa-github-square"></i></a></div>
+            <div class="project-skills load-hidden">
+              <div class="skill-item">JAVA</div>
+              <div class="skill-item">HTML</div>
+              <div class="skill-item">CSS</div>
+              <div class="skill-item">JAVASCRIPT</div>
+              <div class="skill-item">MAVEN</div>
+              <div class="skill-item">TOMCAT</div>
+              <div class="skill-item">MONGODB</div>
+              <div class="skill-item">AWS</div>
+            </div>
+            <div class="project-collabs load-hidden">
+              <div class="collab-item"><a href="https://github.com/argerrard" target="_blank">Andrew </a></div>
+              <div class="collab-item"><a href="https://github.com/cchoww" target="_blank">Chris </a></div>
+              <div class="collab-item"><a href="https://github.com/emilyliao55" target="_blank">Emily </a></div>
+              <div class="collab-item"><a href="https://github.com/kalindudc" target="_blank">Kalindu </a></div>
+            </div>
+          </div>
+
+          <div class="project">
+            <div id="aog" class="project-pic load-hidden">
+              <div class="project-desc font-small">
+                The Art of Guessing is a multiplayer browser game that consists of one person drawing and everyone else guessing the word that describes the drawing. The person who guessed the correct word first wins the round. This multiplayer game would also feature player statistics and the ability to use voice to control everything. Players will have the choice of joining a public queue or creating their own private lobby. Private lobbies will consist of a name and a password, so only users with knowledge of both can join.
+              </div>
+            </div>
+            <div class="project-title font-large3 load-hidden"><a href="https://art-of-guessing.herokuapp.com/" class="font-large3" target="_blank">The Art of Guessing  <i class="fas fa-link"></i></a><span class="indent2"></span> <a href="https://github.com/DoodleCaboodle/TheArtOfGuessing" class="font-large3" target="_blank"><i class="fab fa-github-square"></i></a></div>
+            <div class="project-skills load-hidden">
+              <div class="skill-item">HTML</div>
+              <div class="skill-item">CSS</div>
+              <div class="skill-item">JAVASCRIPT</div>
+              <div class="skill-item">NODEJS</div>
+              <div class="skill-item">MONGODB</div>
+            </div>
+            <div class="project-collabs load-hidden">
+              <div class="collab-item"><a href="https://github.com/andu0987" target="_blank">Andrei </a></div>
+              <div class="collab-item"><a href="https://github.com/kalindudc" target="_blank">Kalindu </a></div>
+            </div>
+          </div>
+
+          <div class="project">
+            <div id="apc" class="project-pic load-hidden">
+              <div class="project-desc font-small">
+                A fully customizable first person/third person controller for Unity. This includes a customizable 3D player model as well as fully integrated animations.
+              </div>
+            </div>
+            <div class="project-title font-large3 load-hidden">Advanced Player Controller<span class="indent2"></span> <a href="https://github.com/kalindudc/AdvancedPlayerController" class="font-large3" target="_blank"><i class="fab fa-github-square"></i></a></div>
+            <div class="project-skills load-hidden">
+              <div class="skill-item">Unity</div>
+              <div class="skill-item">C#</div>
+            </div>
+            <div class="project-collabs load-hidden">
+              <div class="collab-item"><a href="https://github.com/kalindudc" target="_blank">Kalindu </a></div>
+              <div class="collab-item"><a href="https://github.com/sakshaat" target="_blank">Sakshaat </a></div>
+            </div>
+          </div>
+
+          <div class="project">
+            <div id="eventalicious" class="project-pic load-hidden">
+              <div class="project-desc font-small">
+                Interactive prototype for web-based application that will enable users to connect with others in real time by projecting various nearby events and item promotions surrounding the user. Simply put, this application would inform the user of all accessible social events, special promotions or educational gatherings that are happening or will occur in the immediate future based on the geographical location of an individual.
+              </div>
+            </div>
+            <div class="project-title font-large3 load-hidden">
+              <a href="https://cscc10skg.github.io/" class="font-large3" target="_blank">
+                Eventalicious
+                <i class="fas fa-link"></i>
+              </a>
+              <span class="indent2"></span>
+              <a href="https://github.com/CSCC10SKG/CSCC10SKG.github.io" class="font-large3" target="_blank">
+                <i class="fab fa-github-square"></i>
+              </a>
+              <span class="indent2"></span>
+              <a href="https://github.com/CSCC10SKG/CSCC10SKG.github.io/blob/master/P4.SKG.pdf" class="font-large3" target="_blank">
+                <i class="fas fa-book"></i>
+              </a>
+            </div>
+            <div class="project-skills load-hidden">
+              <div class="skill-item">HTML</div>
+              <div class="skill-item">CSS</div>
+              <div class="skill-item">JAVASCRIPT</div>
+              <div class="skill-item">RESEARCH</div>
+            </div>
+            <div class="project-collabs load-hidden">
+              <div class="collab-item"><a href="https://github.com/andu0987" target="_blank">Andrei </a></div>
+              <div class="collab-item"><a href="https://github.com/angelinachoi" target="_blank">Angelina </a></div>
+              <div class="collab-item"><a href="https://github.com/AntixSkill" target="_blank">Eric </a></div>
+              <div class="collab-item"><a href="https://github.com/kalindudc" target="_blank">Kalindu </a></div>
+              <div class="collab-item"><a href="https://github.com/MLCoco" target="_blank">Michael </a></div>
+              <div class="collab-item"><a href="https://github.com/YufeiCui" target="_blank">Yufei </a></div>
+            </div>
+          </div>
+
+          <div class="project">
+            <div id="ndcacct" class="project-pic load-hidden">
+              <div class="project-desc font-small">
+                Full implementation of a buisiness website for local proffesional accountant. NDC Accounting Solutions provide Bookkeeping, Accounting, Payroll &amp; Tax Services to small businesses in Toronto, Greater Toronto and surrounding areas.
+              </div>
+            </div>
+            <div class="project-title font-large3 load-hidden"><a href="https://art-of-guessing.herokuapp.com/" class="font-large3" target="_blank">NDC Accounting Solutions  <i class="fas fa-link"></i></a></div>
+            <div class="project-skills load-hidden">
+              <div class="skill-item">HTML</div>
+              <div class="skill-item">CSS</div>
+              <div class="skill-item">JAVASCRIPT</div>
+            </div>
+            <div class="project-collabs load-hidden">
+              <div class="collab-item"><a href="https://github.com/kalindudc" target="_blank">Kalindu </a></div>
+            </div>
+          </div>
+
+          <div class="project">
+            <div id="algo-vis" class="project-pic load-hidden">
+              <div class="project-desc font-small">
+                A general purpose visualizer for most listmanipulating algorithms.
+              </div>
+            </div>
+            <div class="project-title font-large3 load-hidden"><a href="https://algo-vis.herokuapp.com" class="font-large3" target="_blank">List Visualizer  <i class="fas fa-link"></i></a><span class="indent2"></span> <a href="https://github.com/stuff-we-deserve/algo-vis" class="font-large3" target="_blank"><i class="fab fa-github-square"></i></a></div>
+            <div class="project-skills load-hidden">
+              <div class="skill-item">HTML</div>
+              <div class="skill-item">CSS</div>
+              <div class="skill-item">JAVASCRIPT</div>
+              <div class="skill-item">REACTJS</div>
+            </div>
+            <div class="project-collabs load-hidden">
+              <div class="collab-item"><a href="https://github.com/kalindudc" target="_blank">Kalindu </a></div>
+              <div class="collab-item"><a href="https://github.com/sakshaat" target="_blank">Sakshaat </a></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div id="experience" class="content-section">
+      <div class="inner-section">
+        <div class="section-header font-large2 load-hidden">
+          <div class="color2 font-large2">
+            <div class="separator"></div>
+            WORK EXPERIENCE & EDUCATION
+          </div>
+        </div>
+        <div class="section-content">
+          <div class="exp-item load-hidden">
+            <div class="exp-title color2 font-large3">InfoSphere Data Replication Software Developer Intern</div>
+            <div class="exp-org color4 font-large3">IBM Canada</div>
+            <div class="exp-time color2 font-small2">Sept 2016 - Dec 2017</div>
+          </div>
+          <div class="exp-item load-hidden">
+            <div class="exp-title color2 font-large3">Teaching Assistant</div>
+            <div class="exp-org color4 font-large3">University of Toronto</div>
+            <div class="exp-time color2 font-small2">Sept 2015 - Sep 2016</div>
+          </div>
+          <div class="exp-item load-hidden">
+            <div class="exp-title color2 font-large3">Event Coordinator / Web Developer</div>
+            <div class="exp-org color4 font-large3">Frontline Community Services</div>
+            <div class="exp-time color2 font-small2">Jun 2015 - August 2015</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="contact" class="content-section">
+      <div class="inner-section">
+        <div class="section-header font-large2 load-hidden">
+          <div class="font-large2">
+            <div class="separator"></div>
+            CONTACT ME
+          </div>
+        </div>
+        <div class="section-content">
+          <div class="font-large3 load-hidden">
+            <a href="mailto:kalinduk.decosta@gmail.com?Subject=Hello!" target="_top" class="color5 font-large3">kalinduk.decosta@gmail.com</a>
+          </div>
+          <div class="social load-hidden">
+            <a class="color1 font-small" href="https://www.linkedin.com/in/kdecosta/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a class="color1 font-small" href="https://github.com/kalindudc" target="_blank"><i class="fab fa-github-square"></i></a>
+          </div>
+
+          <div class="footer font-small2 load-hidden">
+            Kalindu De Costa <i class="far fa-copyright"></i> All rights reserved. 2018
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/index.js"></script>
+  </body>
 </html>
