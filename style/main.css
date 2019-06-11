@@ -71,7 +71,7 @@ html {
 }
 
 .nav a:hover * {
-    font-size: 12pt;
+    color: var(--color1);
 }
 
 body {
