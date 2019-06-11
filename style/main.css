@@ -49,6 +49,31 @@ html {
     box-shadow: 0px 0px 52px -20px rgba(64,64,64,1);
 }
 
+.nav {
+    transition: 0.2s;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav a {
+    transition: 0.2s;
+    font-size: 10pt;
+    margin: 10px;
+}
+
+.nav-name {
+    transition: 0.2s;
+    font-size: 10pt;
+    margin-left: 5px;
+}
+
+.nav a:hover * {
+    font-size: 12pt;
+}
+
 body {
     width: 55%;
     height: auto;
@@ -83,6 +108,7 @@ body {
     width: 500px;
     height: auto;
     margin: 10px;
+    border-radius: 1px;
 }
 
 .tagline {
@@ -149,6 +175,7 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    border-radius: 1px;
 }
 
 .project-item:hover {
