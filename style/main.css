@@ -41,6 +41,7 @@ html {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  overflow-x: hidden;
 }
 
 .shadow {
@@ -68,6 +69,10 @@ html {
     transition: 0.2s;
     font-size: 10pt;
     margin-left: 5px;
+}
+
+.nav-active * {
+    color: var(--color1);
 }
 
 .nav a:hover * {
@@ -115,6 +120,8 @@ body {
     color: var(--color3);
     letter-spacing: 1px;
     word-spacing: 7px;
+    max-width: 95%;
+    text-align: center;
 }
 
 .summary {
@@ -150,11 +157,18 @@ body {
 .projects {
     
     width: 100%;
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: flex-start;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
+    -moz-columns: 2;
+    -webkit-columns: 2;
+    columns: 2;
+    -moz-column-gap: 1em;
+    -webkit-column-gap: 1em;
+    column-gap: 1em;
+
 }
 
 .project-item img {
@@ -167,15 +181,20 @@ body {
     transition: 0.5s;
     background: var(--color5);
     min-width: 200px;
-    width: 42%;
+    width: 85%;
     height: auto;
-    margin: 2%;
-    padding: 2%;
+    margin-bottom: 5%;
+    padding: 5%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     border-radius: 1px;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    /* Firefox is dumb */
+    break-inside: avoid;
+    overflow: hidden;
 }
 
 .project-item:hover {
@@ -240,5 +259,18 @@ body {
 
     .about {
         width: 100%;
+    }
+
+    .projects {
+        -moz-columns: 0;
+        -webkit-columns: 0;
+        columns: 0;
+        -moz-column-gap: 0em;
+        -webkit-column-gap: 0em;
+        column-gap: 0em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
     }
 }
