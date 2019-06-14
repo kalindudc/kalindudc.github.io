@@ -109,7 +109,7 @@ body {
 
 .logo {
 
-    max-width: 100%;
+    max-width: 98%;
     width: 500px;
     height: auto;
     margin: 10px;
@@ -142,7 +142,7 @@ body {
     border-radius: 50%;
 }
 
-.avatar:hover {
+.avatar:hover, .avatar-extended {
     width: 300px;
     height: 300px;
     border-radius: 5px;
@@ -272,5 +272,13 @@ body {
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
+    }
+
+    .nav-name {
+        display: none;
+    }
+
+    .avatar:hover {
+        
     }
 }

@@ -6,3 +6,8 @@ ScrollReveal().reveal("div", {distance: "20px"});
 $(".project-item").each(function(){
   ScrollReveal().reveal(this, {delay: getRandomInt(400)});
 });
+
+var avatar = document.querySelector('.avatar');
+avatar.addEventListener('click', function(){
+  avatar.classList.toggle("avatar-extended");
+});
