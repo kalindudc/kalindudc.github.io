@@ -8,6 +8,13 @@ $(".project-item").each(function(){
 });
 
 var avatar = document.querySelector('.avatar');
-avatar.addEventListener('click', function(){
+
+document.addEventListener('click', function(e){
+  if (!e.target.classList.contains("avatar")) {
+    avatar.classList.remove("avatar-extended");
+  }
+});
+
+avatar.addEventListener('click', function(e){
   avatar.classList.toggle("avatar-extended");
 });
