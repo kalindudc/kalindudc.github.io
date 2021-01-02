@@ -135,7 +135,7 @@ body {
 }
 
 .avatar {
-    transition: 0.5s;
+    transition: 0.3s;
     width: 100px;
     height: 100px;
     background: url("/media/avatar.png");
