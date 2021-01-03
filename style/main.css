@@ -123,6 +123,8 @@ body {
     word-spacing: 7px;
     max-width: 95%;
     text-align: center;
+    margin-top: 0;
+    padding: 0;
 }
 
 .summary {
@@ -254,7 +256,7 @@ body {
 }
 
 .links a {
-    margin: 0px 10px 0 10px;
+    margin: 0px 10px 8px 10px;
     font-size: 9pt;
     display: flex;
     flex-direction: row;
