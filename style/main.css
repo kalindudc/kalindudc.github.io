@@ -186,10 +186,9 @@ body {
     transition: 0.3s !important;
     background: var(--color5);
     min-width: 200px;
-    width: 85%;
     height: auto;
     margin-bottom: 5%;
-    padding: 5%;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -205,6 +204,7 @@ body {
     -moz-box-shadow: 0px 0px 7px 6px rgba(0, 0, 0, 0);
     box-shadow: 0px 0px 7px 6px rgba(0, 0, 0, 0);
 }
+
 
 .project-item:hover {
     min-width: 250px;
@@ -233,6 +233,19 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
+}
+
+.tech-stack {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0px;
+}
+
+.tech-stack * {
+    color: rgba(233, 102, 55, 0.842);
+    margin: 3px;
 }
 
 .colabs a {
@@ -320,6 +333,8 @@ body {
 
 @media (max-width: 960px) {
 
-    
+    .project-item {
+        max-width: 100%;
+    }
 
 }
