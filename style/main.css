@@ -223,8 +223,13 @@ body {
     justify-content: space-evenly;
 }
 .title * {
+    transition-duration: 0.3s;
     color: #555;
     margin-right: 10px;
+}
+
+.title a:hover {
+    color: #222;
 }
 
 .project-item .colabs {
@@ -244,8 +249,8 @@ body {
 }
 
 .tech-stack * {
-    color: rgba(233, 102, 55, 0.842);
-    margin: 3px;
+    color: #888;
+    margin-right: 7px;
 }
 
 .colabs a {
@@ -298,6 +303,10 @@ body {
 
 .links span {
     
+}
+
+.github {
+    color: #9d26e2;
 }
 
 @media(max-width:1000px) {
