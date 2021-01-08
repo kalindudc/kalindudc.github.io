@@ -9,15 +9,15 @@
 */
 
 :root {
-  --color1 : #1f2125;
-  --color2 : #ffffff;
-  --color3 : #aaa;
-  --color4 : #999;
-  --color5 : #dfdfdf;
-  --color6 : #cfcfcf;
+    --color1 : #1f2125;
+    --color2 : #ffffff;
+    --color3 : #aaa;
+    --color4 : #999;
+    --color5 : #dfdfdf;
+    --color6 : #cfcfcf;
 
-  --font-normal: 12pt;
-  --font-emphasis: 12pt;
+    --font-normal: 12pt;
+    --font-emphasis: 12pt;
 
 }
 
@@ -27,22 +27,22 @@
 }
 
 * {
-  font-family: 'Arial', sans-serif;
-  font-size: 12pt;
-  font-weight: 300;
-  color: var(--color4);
-  text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    font-size: 12pt;
+    font-weight: 300;
+    color: var(--color4);
+    text-decoration: none;
 }
 
 html {
-  width: 100vw;
-  height: auto;
-  background: var(--color2);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  overflow-x: hidden;
+    width: 100vw;
+    height: auto;
+    background: var(--color2);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: hidden;
 }
 
 .shadow {
@@ -221,6 +221,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    align-items: center;
 }
 .title * {
     transition-duration: 0.3s;
@@ -311,7 +312,7 @@ body {
 
 @media(max-width:1000px) {
     body {
-        width: 98%;
+        width: 95%;
     }
 
     .about {
