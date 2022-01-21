@@ -7,14 +7,12 @@ $(".project-item").each(function(){
   ScrollReveal().reveal(this, {delay: getRandomInt(400)});
 });
 
-var avatar = document.querySelector('.avatar');
+var year = new Date().getFullYear();
 
-document.addEventListener('click', function(e){
-  if (!e.target.classList.contains("avatar")) {
-    avatar.classList.remove("avatar-extended");
-  }
-});
+fetch('templates/header.html')
+  .then(data => data.text())
+  .then(html => document.getElementById('header').innerHTML = html);
 
-avatar.addEventListener('click', function(e){
-  avatar.classList.toggle("avatar-extended");
-});
+fetch('templates/footer.html')
+  .then(data => data.text())
+  .then(html => document.getElementById('footer').innerHTML = html.replace("{year}", year));

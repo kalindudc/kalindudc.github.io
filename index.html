@@ -4,7 +4,7 @@
 
         <title>Kalindu De Costa | Software Engineer, Designer & Web Developer</title>
 
-        <meta name="description" content="Software Engineer, Designer & Web Developer. Graduate of University of Toronto with Honours Bachelor of Science, specializing in Software Engineering. github.com/kalindudc." />
+        <meta name="description" content="Software, Infrastructure &amp; Web Engineer. Graduate of University of Toronto with Honours Bachelor of Science, specializing in Software Engineering. github.com/kalindudc." />
         <meta http-equiv = "content-language" content = "en" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -21,8 +21,10 @@
         <link rel="icon" type="image/png" href="/media/icon.jpg">
 
         <link rel="canonical" href="https://kdecosta.com/">
-        <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400,600,800" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
         <link type="text/css" rel="stylesheet" href="style/font.css" />
@@ -30,52 +32,23 @@
 
         <script src="https://unpkg.com/scrollreveal"></script>
         <script>
-            ScrollReveal({ 
+            ScrollReveal({
                 duration: 800
              });
         </script>
   </head>
   <body>
-    <div class="header c-section">
-        <!-- <div class="nav">
-          <a href="/" class="nav-active"><i class="fas fa-home"></i><span class="nav-name">HOME</span></a>
-          <a href="/qualifications.html" ><i class="fas fa-book-open"></i><span class="nav-name">QUALIFICATIONS</span></a>
-          <a href="/feed.html" ><i class="fas fa-stream"></i><span class="nav-name">FEED</span></a>
-        </div> -->
-        <a href="#"><img class="avatar shadow" src="/media/avatar.jpg" alt="Kalindu De Costa, profile picture."></a>
-        <div class="links">
-            <a href="/media/kalindu_de_costa_resume.pdf" target="_blank" alt="Resume">
-                <i class="fas fa-file-alt"></i>
-                <span class="font-small3">RESUME</span>
-            </a>
-            <a href="http://github.com/kalindudc" target="_blank"><i class="fab fa-github"></i><span class="font-small3">GITHUB</span></a>
-            <a href="https://www.linkedin.com/in/kdecosta/" target="_blank"><i class="fab fa-linkedin-in"></i><span class="font-small3">LINKEDIN</span></a>
-            <!-- <a href="https://twitter.com/KalinduDC" target="_blank"><i class="fab fa-twitter"></i><span class="font-small3">@KalinduDC</span></a>
-            <a href="https://www.instagram.com/kalindudc/" target="_blank"><i class="fab fa-instagram"></i><span class="font-small3">@kalindudc</span></a> -->
-            <a href="mailto:kalindu&commat;kdecosta&period;com" target="_blank"><i class="fas fa-envelope"></i><span class="font-small3">kalindu&commat;kdecosta&period;com</span></a>
-        </div>
-        <a href="/"><img class="logo" src="/media/logo.png" alt="Kalindu De Costa, name banner."></a>
-        <h1 class="tagline">SOFTWARE ENGINEER, DESIGNER & WEB DEVELOPER</h1>
+    <div id="header" class="header c-section">
     </div>
 
-    <!-- div class="summary section">
-        
-
-        <div class="about">
-            <p>I am an all around software engineer, developer and designer. I regularly work with full-stack development and cloud based applications. I love learning and I am always looking for new chanllenges and projects. All my public work can be found on github @kalindudc.</p>
-            
-        </div>
-
-    </div -->
-
     <div class="projects c-section">
-        
+
         <div class="project-item" >
             <a href="https://craftle-mod.com/" target="_blank">
                 <img src="/media/projects/craftle.jpg" alt="Preview image of the project Craftle"/>
             </a>
             <div class="title">
-                <a href="https://craftle-mod.com/" target="_blank">Craftle [WIP]</a> 
+                <a href="https://craftle-mod.com/" target="_blank" class="center-text">Craftle [WIP]</a>
                 <a href="https://github.com/kalindudc/craftle" target="_blank"><i class="github fab fa-github"></i></a>
                 <div class="tech-stack">
                     <i class="fab fa-java"></i>
@@ -90,7 +63,7 @@
                 <img src="/media/projects/search-engine.jpg" alt="Preview image of the project UTSC Document Search"/>
             </a>
             <div class="title">
-                <a href="https://search-engine-utsc.herokuapp.com/" target="_blank">UTSC Document Search</a> 
+                <a href="https://search-engine-utsc.herokuapp.com/" target="_blank" class="center-text">UTSC Document Search</a>
                 <a href="https://github.com/C01-TEAM5/search-engine-utsc" target="_blank"><i class="github fab fa-github"></i></a>
                 <div class="tech-stack">
                     <i class="fab fa-java"></i>
@@ -109,7 +82,7 @@
                 <img src="/media/projects/apc.jpg" alt="Preview image of the project Advanced Player Controller"/>
             </a>
             <div class="title">
-                <a href="#" target="_blank">Advanced Player Controller</a> 
+                <a href="#" target="_blank" class="center-text">Advanced Player Controller</a>
                 <a href="https://github.com/kalindudc/AdvancedPlayerController" target="_blank"><i class="github fab fa-github"></i></a>
                 <div class="tech-stack">
                     <i class="fab fa-unity"></i>
@@ -122,12 +95,12 @@
                 <a href="https://github.com/sakshaat" target="_blank">Sakshaat </a>
             </div>
         </div>
-        
+
         <div class="project-item" >
             <a href="http://ndcacctsolutions.com/" target="_blank">
                 <img src="/media/projects/ndcacct.jpg" alt="Preview image of NDC Account Solutions"/>
             </a>
-            <div class="title"><a href="http://ndcacctsolutions.com/" target="_blank">NDC Accounting Solutions</a> </div>
+            <div class="title"><a href="http://ndcacctsolutions.com/" target="_blank" class="center-text">NDC Accounting Solutions</a> </div>
             <div class="colabs">
                 <a href="https://github.com/kalindudc" target="_blank">Kalindu </a>
             </div>
@@ -137,7 +110,7 @@
                 <img src="/media/projects/secret-hitler.jpg" alt="Preview image of Social Deduction Game"/>
             </a>
             <div class="title">
-                <a href="https://github.com/Secret-Hitler-Dev/secret_hitler" target="_blank">Social Deduction Game [WIP]</a> 
+                <a href="https://github.com/Secret-Hitler-Dev/secret_hitler" target="_blank" class="center-text">Social Deduction Game [WIP]</a>
                 <a href="https://github.com/Secret-Hitler-Dev/secret_hitler" target="_blank"><i class="github fab fa-github"></i></a>
                 <div class="tech-stack">
                     <i class="fab fa-node-js"></i>
@@ -154,7 +127,7 @@
                 <img src="/media/projects/aog.jpg" alt="Preview image of The Art of Guessing"/>
             </a>
             <div class="title">
-                <a href="https://art-of-guessing.herokuapp.com/" target="_blank">The Art of Guessing</a>
+                <a href="https://art-of-guessing.herokuapp.com/" target="_blank" class="center-text">The Art of Guessing</a>
                 <a href="https://github.com/DoodleCaboodle/TheArtOfGuessing" target="_blank"><i class="github fab fa-github"></i></a>
                 <div class="tech-stack">
                     <i class="fab fa-node-js"></i>
@@ -170,7 +143,7 @@
                 <img src="/media/projects/eventalicious.jpg" alt="Preview image of Eventalicious"/>
             </a>
             <div class="title">
-                <a href="https://cscc10skg.github.io/index.html" target="_blank">Eventalicious</a>
+                <a href="https://cscc10skg.github.io/index.html" target="_blank" class="center-text">Eventalicious</a>
                 <a href="https://github.com/CSCC10SKG/CSCC10SKG.github.io" target="_blank"><i class="github fab fa-github"></i></a>
                 <a href="https://github.com/CSCC10SKG/CSCC10SKG.github.io/blob/master/P4.SKG.pdf" target="_blank"><i class="fas fa-book"></i></a>
                 <div class="tech-stack">
@@ -187,13 +160,13 @@
                 <a href="https://github.com/YufeiCui" target="_blank">Yufei </a>
             </div>
         </div>
-        
+
         <div class="project-item" >
             <a href="https://algo-vis.herokuapp.com" target="_blank">
                 <img src="/media/projects/algo-vis.jpg" alt="Preview image of List Visualizer"/>
             </a>
             <div class="title">
-                <a href="https://algo-vis.herokuapp.com" target="_blank">List Visualizer</a> 
+                <a href="https://algo-vis.herokuapp.com" target="_blank" class="center-text">List Visualizer</a>
                 <a href="https://github.com/stuff-we-deserve/algo-vis" target="_blank"><i class="github fab fa-github"></i></a>
                 <div class="tech-stack">
                     <i class="fab fa-node-js"></i>
@@ -205,7 +178,7 @@
                 <a href="https://github.com/sakshaat" target="_blank">Sakshaat </a>
             </div>
         </div>
-        
+
     </div>
 
     <div class="links">
@@ -219,10 +192,8 @@
         <a href="https://www.instagram.com/kalindudc/" target="_blank"><i class="fab fa-instagram"></i><span class="font-small3">@kalindudc</span></a> -->
         <a href="mailto:kalindu&commat;kdecosta&period;com" target="_blank"><i class="fas fa-envelope"></i><span class="font-small3">kalindu&commat;kdecosta&period;com</span></a>
     </div>
-    <div class="footer font-small2 load-hidden">
-        Kalindu De Costa <i class="far fa-copyright"></i> All rights reserved. 2021
+    <div id="footer">
     </div>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.2/cash.min.js"></script>
     <script src="js/main.js"></script>
