@@ -19,12 +19,16 @@ main();
 async function main() {
   var params = new URLSearchParams(window.location.search);
   if (params.has("article")) {
-    console.log("Try to render blog post!")
-    renderMarkdown(sanitizeString(params.get("article")));
+    var articleName = sanitizeString(params.get("article"));
+    var ok = await renderMarkdown(articleName);
+    if (!ok) {
+      ok = await renderMarkdown(articleName + ".md");
+    }
+    if (!ok) {
+      window.location = "/404";
   }
   else {
     if (params.toString().length > 0) {
-      console.log("invalid query")
       window.location = "/404"
     }
 
@@ -60,7 +64,6 @@ async function fetchFrom(isGithub) {
   )
   .then(data => {
     if (!data.ok) {
-      console.log("no data 1", data)
       return false;
     }
     else {
@@ -78,7 +81,6 @@ async function fetchFrom(isGithub) {
     }
     renderListOfArticles(isGithub ? body : body.files.slice(1))
     .then(posts => {
-      console.log(posts);
       posts.forEach(post => {
         addPostToList(post);
       });
@@ -94,7 +96,6 @@ async function fetchFrom(isGithub) {
 }
 
 async function fetchFromGithub() {
-  console.log("Show all blog posts")
   var resp = await fetch("https://api.github.com/repos/kalindudc/kalindudc.github.io/contents/blog/articles",
     {
       method: "GET",
@@ -106,7 +107,6 @@ async function fetchFromGithub() {
   )
   .then(data => {
     if (!data.ok) {
-      console.log("no data 1", data)
       return false;
     }
     else {
@@ -117,7 +117,6 @@ async function fetchFromGithub() {
     if (!body) {
       return false;
     }
-    console.log("from github",body)
 
     if (body.length < 1) {
       document.getElementById('content').innerHTML = "Blog is empty"
@@ -125,7 +124,6 @@ async function fetchFromGithub() {
     }
     renderListOfArticles(body)
     .then(posts => {
-      console.log(posts);
       posts.forEach(post => {
         addPostToList(post);
       });
@@ -140,25 +138,27 @@ async function fetchFromGithub() {
   return resp;
 }
 
-function renderMarkdown(article) {
-  fetch("/blog/articles/" + article + ".md")
+async function renderMarkdown(article) {
+  fetch("/blog/articles/" + article)
     .then(data => {
 
       if (!data.ok) {
-        console.log("no data 2", data)
-        window.location = "/404"
-        return;
+        return false;
       }
       else {
         return data.text()
       }
     })
     .then(html => {
+      if (!html) {
+        return false;
+      }
+
       var front = yamlFront.loadFront(html);
-      console.log(front)
       document.getElementById('content').innerHTML = `
         <div class="post-content fill">${marked.parse(front.__content)}</div>
       `
+      return true;
     });
 }
 
@@ -169,8 +169,13 @@ async function renderListOfArticles(files) {
   for (var i = 0; i < files.length; i++) {
     var file = files[i];
     var name = file.name.replace(".md", "")
-    console.log(file)
-    var response = await fetch("/blog/articles/" + name + ".md")
+    var response = await fetch("/blog/articles/" + name);
+    if (!response.ok) {
+      response = await fetch("/blog/articles/" + name + ".md");
+    }
+    if (!response.ok) {
+      return;
+    }
     var contents = await response.text()
     var front = yamlFront.loadFront(contents);
     front.fileName = name;
