@@ -20,9 +20,10 @@ async function main() {
   var params = new URLSearchParams(window.location.search);
   if (params.has("article")) {
     var articleName = sanitizeString(params.get("article"));
-    var ok = await renderMarkdown(articleName);
+    var ok = await renderMarkdown("/blog/articles/" + articleName + ".md");
     if (!ok) {
-      ok = await renderMarkdown(articleName + ".md");
+      // for github
+      ok = await renderMarkdown("https://raw.githubusercontent.com/kalindudc/kalindudc.github.io/master/blog/articles/" + articleName + ".md");
       console.log(ok)
     }
     if (!ok) {
@@ -100,51 +101,8 @@ async function fetchFrom(isGithub) {
   return resp;
 }
 
-async function fetchFromGithub() {
-  var resp = await fetch("https://api.github.com/repos/kalindudc/kalindudc.github.io/contents/blog/articles",
-    {
-      method: "GET",
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-    }
-  )
-  .then(data => {
-    if (!data.ok) {
-      return false;
-    }
-    else {
-      return data.json();
-    }
-  })
-  .then(body => {
-    if (!body) {
-      return false;
-    }
-
-    if (body.length < 1) {
-      document.getElementById('content').innerHTML = "Blog is empty"
-      return true;
-    }
-    renderListOfArticles(body)
-    .then(posts => {
-      posts.forEach(post => {
-        addPostToList(post);
-      });
-      $(".blog-post-listing").each(function(){
-        ScrollReveal().reveal(this, {distance: "40px", delay: 200});
-      });
-      return true;
-    });
-    return true;
-  });
-
-  return resp;
-}
-
-async function renderMarkdown(article) {
-  return await fetch("/blog/articles/" + article)
+async function renderMarkdown(path) {
+  return await fetch(path)
   .then(data => {
 
     if (!data.ok) {
@@ -174,9 +132,10 @@ async function renderListOfArticles(files) {
   for (var i = 0; i < files.length; i++) {
     var file = files[i];
     var name = file.name.replace(".md", "")
-    var response = await fetch("/blog/articles/" + name);
+    var response = await fetch("/blog/articles/" + name + ".md");
     if (!response.ok) {
-      response = await fetch("/blog/articles/" + name + ".md");
+      // for github
+      response = await fetch("https://raw.githubusercontent.com/kalindudc/kalindudc.github.io/master/blog/articles/" + name + ".md");
     }
     if (!response.ok) {
       return;
