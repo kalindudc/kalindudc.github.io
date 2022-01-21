@@ -28,43 +28,116 @@ async function main() {
       window.location = "/404"
     }
 
-    console.log("Show all blog posts")
-    fetch("/blog/articles/",
-      {
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        }
-      }
-    )
-    .then(data => {
-
-      if (!data.ok) {
-        console.log("no data 1", data)
-        window.location = "/404"
-        return;
-      }
-      else {
-        return data.json();
-      }
-    })
-    .then(body => {
-      if (body.files.length < 2) {
-        document.getElementById('content').innerHTML = "Blog is empty"
-        return;
-      }
-      renderListOfArticles(body.files.slice(1))
-      .then(posts => {
-        console.log(posts);
-        posts.forEach(post => {
-          addPostToList(post);
+    fetchFrom(false)
+    .then(ok => {
+      if (!ok) {
+        fetchFrom(true)
+        .then(ok => {
+          if (!ok) {
+            window.location = "/404";
+          }
         });
-        $(".blog-post-listing").each(function(){
-          ScrollReveal().reveal(this, {distance: "40px", delay: 200});
-        });
-      });
+      }
     });
+
   }
+}
+
+async function fetchFrom(isGithub) {
+  var path = "/blog/articles/";
+  if (isGithub) {
+    path = "https://api.github.com/repos/kalindudc/kalindudc.github.io/contents/blog/articles";
+  }
+
+  var resp = await fetch(path,
+    {
+      method: "GET",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    }
+  )
+  .then(data => {
+    if (!data.ok) {
+      console.log("no data 1", data)
+      return false;
+    }
+    else {
+      return data.json();
+    }
+  })
+  .then(body => {
+    if (!body) {
+      return false;
+    }
+
+    if ((!isGithub && body.files.length < 2) || (isGithub && body.length < 1)) {
+      document.getElementById('content').innerHTML = "Blog is empty"
+      return true;
+    }
+    renderListOfArticles(isGithub ? body : body.files.slice(1))
+    .then(posts => {
+      console.log(posts);
+      posts.forEach(post => {
+        addPostToList(post);
+      });
+      $(".blog-post-listing").each(function(){
+        ScrollReveal().reveal(this, {distance: "40px", delay: 200});
+      });
+      return true;
+    });
+    return true;
+  });
+
+  return resp;
+}
+
+async function fetchFromGithub() {
+  console.log("Show all blog posts")
+  var resp = await fetch("https://api.github.com/repos/kalindudc/kalindudc.github.io/contents/blog/articles",
+    {
+      method: "GET",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    }
+  )
+  .then(data => {
+    if (!data.ok) {
+      console.log("no data 1", data)
+      return false;
+    }
+    else {
+      return data.json();
+    }
+  })
+  .then(body => {
+    if (!body) {
+      return false;
+    }
+    console.log("from github",body)
+
+    if (body.length < 1) {
+      document.getElementById('content').innerHTML = "Blog is empty"
+      return true;
+    }
+    renderListOfArticles(body)
+    .then(posts => {
+      console.log(posts);
+      posts.forEach(post => {
+        addPostToList(post);
+      });
+      $(".blog-post-listing").each(function(){
+        ScrollReveal().reveal(this, {distance: "40px", delay: 200});
+      });
+      return true;
+    });
+    return true;
+  });
+
+  return resp;
 }
 
 function renderMarkdown(article) {
@@ -95,11 +168,12 @@ async function renderListOfArticles(files) {
   var posts = []
   for (var i = 0; i < files.length; i++) {
     var file = files[i];
+    var name = file.name.replace(".md", "")
     console.log(file)
-    var response = await fetch("/blog/articles/" + file.title)
+    var response = await fetch("/blog/articles/" + name + ".md")
     var contents = await response.text()
     var front = yamlFront.loadFront(contents);
-    front.fileName = file.name;
+    front.fileName = name;
     posts.push(front);
   }
 
