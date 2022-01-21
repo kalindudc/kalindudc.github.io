@@ -26,6 +26,7 @@ async function main() {
     }
     if (!ok) {
       window.location = "/404";
+    }
   }
   else {
     if (params.toString().length > 0) {
@@ -140,26 +141,26 @@ async function fetchFromGithub() {
 
 async function renderMarkdown(article) {
   fetch("/blog/articles/" + article)
-    .then(data => {
+  .then(data => {
 
-      if (!data.ok) {
-        return false;
-      }
-      else {
-        return data.text()
-      }
-    })
-    .then(html => {
-      if (!html) {
-        return false;
-      }
+    if (!data.ok) {
+      return false;
+    }
+    else {
+      return data.text()
+    }
+  })
+  .then(html => {
+    if (!html) {
+      return false;
+    }
 
-      var front = yamlFront.loadFront(html);
-      document.getElementById('content').innerHTML = `
-        <div class="post-content fill">${marked.parse(front.__content)}</div>
-      `
-      return true;
-    });
+    var front = yamlFront.loadFront(html);
+    document.getElementById('content').innerHTML = `
+      <div class="post-content fill">${marked.parse(front.__content)}</div>
+    `
+    return true;
+  });
 }
 
 async function renderListOfArticles(files) {
