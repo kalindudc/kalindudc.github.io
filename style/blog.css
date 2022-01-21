@@ -45,7 +45,6 @@
   transition: max-height 2000ms ease-out;
   max-height: 200px;
   visibility: visible;
-  opacity: 1;
 }
 
 .blog-post-listing .top {
@@ -79,7 +78,6 @@
   max-height: 0;
   transition: max-height 200ms ease-out;
   visibility: hidden;
-  opacity: 0;
 }
 
 pre {
@@ -107,7 +105,15 @@ pre code {
 blockquote {
   border-left: 5px solid #eee;
   margin: 0;
-  padding: 2px 8px;
+  padding: 0px 8px;
+}
+
+p {
+  margin: 0;
+}
+
+h1 {
+  margin: 5px;
 }
 
 .post-content a {
