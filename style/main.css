@@ -11,8 +11,8 @@
 :root {
     --color1 : #1f2125;
     --color2 : #ffffff;
-    --color3 : #aaa;
-    --color4 : #999;
+    --color3 : #a4a4a4;
+    --color4 : #777;
     --color5 : #dfdfdf;
     --color6 : #cfcfcf;
 
@@ -92,6 +92,7 @@ a {
 
 .nav a:hover * {
     color: var(--color1);
+    font-size: 12pt;
 }
 
 body {
@@ -132,7 +133,7 @@ body {
 }
 
 .tagline {
-    color: var(--color3);
+    color: var(--color4);
     letter-spacing: 1px;
     word-spacing: 7px;
     max-width: 95%;
@@ -140,7 +141,7 @@ body {
     margin-top: 0;
     padding: 0;
     font-size: 12pt;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .summary {
@@ -322,8 +323,9 @@ body {
 }
 
 .links a:hover * {
-    transition: 0.4s;
-    color: rgb(66, 66, 66);
+    transition: 0.25s;
+    color: #222;
+    font-size: 9pt;
 }
 
 .links span {

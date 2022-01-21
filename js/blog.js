@@ -121,6 +121,7 @@ async function renderMarkdown(path) {
     document.getElementById('content').innerHTML = `
       <div class="post-content fill">${marked.parse(front.__content)}</div>
     `
+    document.getElementById('tab-title').innerHTML = front.title
     return true;
   });
 }
