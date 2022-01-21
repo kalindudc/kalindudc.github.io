@@ -23,10 +23,12 @@ async function main() {
     var ok = await renderMarkdown(articleName);
     if (!ok) {
       ok = await renderMarkdown(articleName + ".md");
+      console.log(ok)
     }
     if (!ok) {
-      window.location = "/404";
+      window.location = "/404"
     }
+
   }
   else {
     if (params.toString().length > 0) {
@@ -49,10 +51,12 @@ async function main() {
 }
 
 async function fetchFrom(isGithub) {
+  console.log("is github", isGithub)
   var path = "/blog/articles/";
   if (isGithub) {
     path = "https://api.github.com/repos/kalindudc/kalindudc.github.io/contents/blog/articles";
   }
+  console.log("path", path)
 
   var resp = await fetch(path,
     {
@@ -140,7 +144,7 @@ async function fetchFromGithub() {
 }
 
 async function renderMarkdown(article) {
-  fetch("/blog/articles/" + article)
+  return await fetch("/blog/articles/" + article)
   .then(data => {
 
     if (!data.ok) {
