@@ -24,7 +24,8 @@ async function main() {
   }
   else {
     if (params.toString().length > 0) {
-      window.location = "/404"
+      console.log("invalid query")
+      //window.location = "/404"
     }
 
     console.log("Show all blog posts")
@@ -39,7 +40,8 @@ async function main() {
     .then(data => {
 
       if (!data.ok) {
-        window.location = "/404"
+        console.log("no data 1", data)
+        //window.location = "/404"
         return;
       }
       else {
@@ -70,7 +72,8 @@ function renderMarkdown(article) {
     .then(data => {
 
       if (!data.ok) {
-        window.location = "/404"
+        console.log("no data 2", data)
+        //window.location = "/404"
         return;
       }
       else {
