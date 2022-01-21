@@ -9,10 +9,10 @@ $(".project-item").each(function(){
 
 var year = new Date().getFullYear();
 
-fetch('templates/header.html')
+fetch('/templates/header.html')
   .then(data => data.text())
   .then(html => document.getElementById('header').innerHTML = html);
 
-fetch('templates/footer.html')
+fetch('/templates/footer.html')
   .then(data => data.text())
   .then(html => document.getElementById('footer').innerHTML = html.replace("{year}", year));

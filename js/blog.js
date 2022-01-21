@@ -25,11 +25,11 @@ async function main() {
   else {
     if (params.toString().length > 0) {
       console.log("invalid query")
-      //window.location = "/404"
+      window.location = "/404"
     }
 
     console.log("Show all blog posts")
-    fetch("blog/articles/",
+    fetch("/blog/articles/",
       {
         headers: {
           'Accept': 'application/json',
@@ -41,7 +41,7 @@ async function main() {
 
       if (!data.ok) {
         console.log("no data 1", data)
-        //window.location = "/404"
+        window.location = "/404"
         return;
       }
       else {
@@ -68,12 +68,12 @@ async function main() {
 }
 
 function renderMarkdown(article) {
-  fetch("blog/articles/" + article + ".md")
+  fetch("/blog/articles/" + article + ".md")
     .then(data => {
 
       if (!data.ok) {
         console.log("no data 2", data)
-        //window.location = "/404"
+        window.location = "/404"
         return;
       }
       else {
@@ -96,7 +96,7 @@ async function renderListOfArticles(files) {
   for (var i = 0; i < files.length; i++) {
     var file = files[i];
     console.log(file)
-    var response = await fetch("blog/articles/" + file.title)
+    var response = await fetch("/blog/articles/" + file.title)
     var contents = await response.text()
     var front = yamlFront.loadFront(contents);
     front.fileName = file.name;
