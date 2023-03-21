@@ -18,6 +18,7 @@ main();
 
 async function main() {
   var params = new URLSearchParams(window.location.search);
+  console.log(params);
   if (params.has("article")) {
     var articleName = sanitizeString(params.get("article"));
     var ok = await renderMarkdown("/blog/articles/" + articleName + ".md");
@@ -37,16 +38,16 @@ async function main() {
     }
 
     fetchFrom(false)
-    .then(ok => {
-      if (!ok) {
-        fetchFrom(true)
-        .then(ok => {
-          if (!ok) {
-            window.location = "/404";
-          }
-        });
-      }
-    });
+      .then(ok => {
+        if (!ok) {
+          fetchFrom(true)
+            .then(ok => {
+              if (!ok) {
+                window.location = "/404";
+              }
+            });
+        }
+      });
 
   }
 }
@@ -68,62 +69,62 @@ async function fetchFrom(isGithub) {
       }
     }
   )
-  .then(data => {
-    if (!data.ok) {
-      return false;
-    }
-    else {
-      return data.json();
-    }
-  })
-  .then(body => {
-    if (!body) {
-      return false;
-    }
+    .then(data => {
+      if (!data.ok) {
+        return false;
+      }
+      else {
+        return data.json();
+      }
+    })
+    .then(body => {
+      if (!body) {
+        return false;
+      }
 
-    if ((!isGithub && body.files.length < 2) || (isGithub && body.length < 1)) {
-      document.getElementById('content').innerHTML = "Blog is empty"
-      return true;
-    }
-    renderListOfArticles(isGithub ? body : body.files.slice(1))
-    .then(posts => {
-      posts.forEach(post => {
-        addPostToList(post);
-      });
-      $(".blog-post-listing").each(function(){
-        ScrollReveal().reveal(this, {distance: "40px", delay: 200});
-      });
+      if ((!isGithub && body.files.length < 2) || (isGithub && body.length < 1)) {
+        document.getElementById('content').innerHTML = "Blog is empty"
+        return true;
+      }
+      renderListOfArticles(isGithub ? body : body.files.slice(1))
+        .then(posts => {
+          posts.forEach(post => {
+            addPostToList(post);
+          });
+          $(".blog-post-listing").each(function() {
+            ScrollReveal().reveal(this, { distance: "40px", delay: 200 });
+          });
+          return true;
+        });
       return true;
     });
-    return true;
-  });
 
   return resp;
 }
 
 async function renderMarkdown(path) {
   return await fetch(path)
-  .then(data => {
+    .then(data => {
 
-    if (!data.ok) {
-      return false;
-    }
-    else {
-      return data.text()
-    }
-  })
-  .then(html => {
-    if (!html) {
-      return false;
-    }
+      if (!data.ok) {
+        return false;
+      }
+      else {
+        return data.text()
+      }
+    })
+    .then(html => {
+      if (!html) {
+        return false;
+      }
 
-    var front = yamlFront.loadFront(html);
-    document.getElementById('content').innerHTML = `
+      var front = yamlFront.loadFront(html);
+      document.getElementById('content').innerHTML = `
       <div class="post-content fill">${marked.parse(front.__content)}</div>
     `
-    document.getElementById('tab-title').innerHTML = front.title
-    return true;
-  });
+      document.getElementById('tab-title').innerHTML = front.title
+      return true;
+    });
 }
 
 async function renderListOfArticles(files) {
@@ -176,7 +177,7 @@ function addPostToList(data) {
   `;
 }
 
-function sanitizeString(str){
-  str = str.replace(/[^a-z0-9áéíóúñü \.,_-]/gim,"");
+function sanitizeString(str) {
+  str = str.replace(/[^a-z0-9áéíóúñü \.,_-]/gim, "");
   return str.trim();
 }
