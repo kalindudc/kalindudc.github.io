@@ -1,0 +1,30 @@
+{
+  "name": "kalindudc.github.io",
+  "version": "2.0.0",
+  "description": "Kalindu De Costa personal site",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx serve docs",
+    "build": "npx @11ty/eleventy --input=src --output=docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kalindudc/kalindudc.github.io.git"
+  },
+  "keywords": [
+    "portfolio",
+    "site",
+    "webdev",
+    "js"
+  ],
+  "author": "Kalindu De Costa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kalindudc/kalindudc.github.io/issues"
+  },
+  "homepage": "https://github.com/kalindudc/kalindudc.github.io#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0",
+    "serve": "^14.2.0"
+  }
+}
